@@ -7,9 +7,9 @@ export default function LandingPage() {
   return (
     <>
       <Hero />
-      <Anchor id='about' />
+      {/* <Anchor id='about' /> */}
       <About />
-      <Anchor id='testimonials' />
+      {/* <Anchor id='testimonials' /> */}
       <Testimonials />
     </>
   );
