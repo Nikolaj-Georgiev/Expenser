@@ -4,7 +4,10 @@ import classes from './AboutSection.module.css';
 
 export default function AboutSectionPage() {
   return (
-    <section className={classes.about}>
+    <section
+      className={classes.about}
+      id='about'
+    >
       <div className={classes.container}>
         <h2 className={classes.heading}>
           How Expenser Helps You Track and Manage Your Expenses

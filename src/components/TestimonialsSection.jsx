@@ -7,7 +7,10 @@ import Testimonial from './Testimonial.jsx';
 export default function TestimonialsPage() {
   return (
     <>
-      <section className={classes['testimonials-section']}>
+      <section
+        className={classes['testimonials-section']}
+        id='testimonials'
+      >
         <div className={classes['section-container']}>
           <h2 className={classes.heading}>
             Ones you try it, you can&apos;t go back!

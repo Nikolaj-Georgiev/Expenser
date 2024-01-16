@@ -1,4 +1,5 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import Li from '../UI/Li';
 import classes from './MainNav.module.css';
 
@@ -9,28 +10,32 @@ export default function MainNav() {
   return (
     <nav className={classes['main-nav']}>
       <ul className={classes['main-nav-list']}>
-        {/* <Li>
-          <NavLink
-            to='/about'
-            className={({ isActive }) => (isActive ? active : linkCssClass)}
-            // exact='true'
-            // replace
+        <Li>
+          <ScrollLink
+            activeClass={active}
+            to='about'
+            spy={true}
+            smooth={true}
+            offset={-96}
+            duration={800}
+            className={linkCssClass}
           >
             About
-          </NavLink>
+          </ScrollLink>
         </Li>
-
         <Li>
-          <NavLink
-            className={({ isActive }) => (isActive ? active : linkCssClass)}
-            to='/testimonials'
-            // exact='true'
-            // replace
+          <ScrollLink
+            activeClass={active}
+            to='testimonials'
+            spy={true}
+            smooth={true}
+            offset={-96}
+            duration={800}
+            className={linkCssClass}
           >
             Testimonials
-          </NavLink> */}
-        {/* </Li> */}
-
+          </ScrollLink>
+        </Li>
         <Li>
           <Link
             className={buttonsCssClass}

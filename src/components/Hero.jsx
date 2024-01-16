@@ -8,7 +8,10 @@ import { HERO_BULLETS } from '../Util/config';
 export default function Hero() {
   return (
     <>
-      <section className={classes['section-hero']}>
+      <section
+        className={classes['section-hero']}
+        id='hero'
+      >
         <div className={classes.hero}>
           <div className={classes['hero-text-box']}>
             <div>
