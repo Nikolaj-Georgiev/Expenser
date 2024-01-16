@@ -1,6 +1,7 @@
 .testimonials-section {
   background-color: #d9f3e5;
   align-items: center;
+  padding: 9.6rem 0;
 }
 
 .container {
@@ -9,13 +10,25 @@
   padding: 0 3.2rem;
   max-width: 120rem;
   margin: 0 auto;
-  padding: 9.6rem;
-  gap: 3.2rem;
+  gap: 6.4rem;
 }
 
-.testimonials-container {
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
 }
-
 .img {
-  max-width: 60rem;
+  max-width: 50rem;
+  margin: auto;
+  border-radius: 1.6rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(66, 196, 127, 0.267);
+}
+
+.heading {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+  padding-left: 5.2rem;
 }

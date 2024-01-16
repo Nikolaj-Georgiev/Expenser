@@ -124,26 +124,30 @@ export const HERO_BULLETS = [
 export const CUSTOMERS = [
   {
     id: 'cus1',
-    testimonial: '“Expenser is a lifesaver. It scans and records my receipts, links my accounts, and reminds me of bills. It\'s like having a personal accountant in my pocket.” - Lisa, 28',
+    testimonial: '“Expenser is a lifesaver. It scans and records my receipts, links my accounts, and reminds me of bills. It\'s like having a personal accountant in my pocket.”',
     image: imageCustomer1,
-    imageAlt: 'A jung woman with beautiful green eyes and a brown hair.'
+    imageAlt: 'A jung woman with beautiful green eyes and a brown hair.',
+    name: ' Lisa, 28'
   },
   {
     id: 'cus2',
-    testimonial: '“Expenser is the best app for family finances. I can see and share our expenses with my spouse, and we can stay on top of our budget. Expenser keeps our family organized and transparent.” - David, 42',
+    testimonial: '“Expenser is the best app for family finances. I can see and share our expenses with my spouse, and we can stay on top of our budget.”',
     image: imageCustomer2,
-    imageAlt: 'A good looking middle age man dressed with shirt and sweater'
+    imageAlt: 'A good looking middle age man dressed with shirt and sweater',
+    name: ' David, 42'
   },
   {
     id: 'cus3',
-    testimonial: '“Expenser is awesome! It\'s so easy to use and it helps me manage my money better. I can set up budgets, track my spending, and save more.” - Anna, 34',
+    testimonial: '“Expenser is awesome! It\'s so easy to use and it helps me manage my money better. I can set up budgets, track my spending, and save more.”',
     image: imageCustomer4,
-    imageAlt: 'A beautiful woman with brown hair dressed in black'
+    imageAlt: 'A beautiful woman with brown hair dressed in black',
+    name: ' Anna, 34'
   },
   {
     id: 'cus4',
-    testimonial: '“Expenser is amazing. It\'s a powerful and user-friendly app that helps me control my finances. I can create goals, view reports, and sync my accounts. Expenser is the ultimate app for personal finance.” - Kevin, 37',
+    testimonial: '“Expenser is amazing. It\'s a powerful and user-friendly app that helps me control my finances. I can create goals, view reports, and sync my accounts.”',
     image: imageCustomer3,
-    imageAlt: 'A middle age man with red hat and a black sweater'
+    imageAlt: 'A middle age man with red hat and a black sweater',
+    name: ' Kevin, 37'
   }
 ]

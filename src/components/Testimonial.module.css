@@ -1,0 +1,17 @@
+.img {
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
