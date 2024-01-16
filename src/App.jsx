@@ -4,8 +4,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RooterLayout from './pages/Root.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
-import About from './pages/About.jsx';
-import Testimonials from './pages/Testimonials.jsx';
+// import About from './pages/About.jsx';
+// import Testimonials from './pages/Testimonials.jsx';
 import ErrorPage from './pages/Error.jsx';
 import LandingPage from './pages/LandingPage.jsx';
 
@@ -18,10 +18,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <LandingPage />,
-        children: [
-          { path: 'about', element: <About /> },
-          { path: 'testimonials', element: <Testimonials /> },
-        ],
       },
       // { index: true, element: <Hero /> },
       { path: 'login', element: <Login /> },
