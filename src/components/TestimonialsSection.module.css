@@ -7,9 +7,7 @@
 .container {
   display: grid;
   grid-template-columns: 45fr 55fr;
-  padding: 0 3.2rem;
-  max-width: 120rem;
-  margin: 0 auto;
+
   gap: 6.4rem;
 }
 
@@ -24,6 +22,12 @@
   margin: auto;
   border-radius: 1.6rem;
   box-shadow: 0 0.2rem 0.8rem rgba(66, 196, 127, 0.267);
+}
+
+.section-container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
 }
 
 .heading {
