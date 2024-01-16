@@ -1,5 +1,5 @@
 import Card from '../UI/Card.jsx';
-import { CARDS_INFO } from '../Util/config.js';
+import { CARDS_INFO } from '../util/config.js';
 import classes from './AboutSection.module.css';
 
 export default function AboutSectionPage() {

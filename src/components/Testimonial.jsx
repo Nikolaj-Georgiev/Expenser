@@ -1,5 +1,6 @@
 import classes from './Testimonial.module.css';
 
+// eslint-disable-next-line react/prop-types
 export default function Testimonial({ testimonial, img, imgAlt, name }) {
   return (
     <>

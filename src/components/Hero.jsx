@@ -3,7 +3,7 @@ import smallPigImage from '../assets/logo-trans.png';
 import bigPigImage from '../assets/logo-trans-bigger.png';
 
 import Li from '../UI/Li';
-import { HERO_BULLETS } from '../Util/config';
+import { HERO_BULLETS } from '../util/config';
 
 export default function Hero() {
   return (
