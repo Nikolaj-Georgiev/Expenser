@@ -7,15 +7,14 @@
 .container {
   display: grid;
   grid-template-columns: 45fr 55fr;
-
-  gap: 6.4rem;
+  gap: 8rem;
 }
 
 .testimonials {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 4.8rem;
-  column-gap: 8rem;
+  column-gap: 7.2rem;
 }
 .img {
   max-width: 50rem;

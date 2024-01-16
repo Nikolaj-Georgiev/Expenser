@@ -9,9 +9,9 @@ export default function MainNav() {
   return (
     <nav className={classes['main-nav']}>
       <ul className={classes['main-nav-list']}>
-        <Li>
+        {/* <Li>
           <NavLink
-            to='about'
+            to='/about'
             className={({ isActive }) => (isActive ? active : linkCssClass)}
             // exact='true'
             // replace
@@ -23,13 +23,13 @@ export default function MainNav() {
         <Li>
           <NavLink
             className={({ isActive }) => (isActive ? active : linkCssClass)}
-            to='testimonials'
+            to='/testimonials'
             // exact='true'
             // replace
           >
             Testimonials
-          </NavLink>
-        </Li>
+          </NavLink> */}
+        {/* </Li> */}
 
         <Li>
           <Link
