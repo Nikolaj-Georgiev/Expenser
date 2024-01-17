@@ -2,7 +2,6 @@ import classes from './Hero.module.css';
 import smallPigImage from '../assets/logo-trans.png';
 import bigPigImage from '../assets/logo-trans-bigger.png';
 
-import Li from '../UI/Li';
 import { HERO_BULLETS } from '../util/config';
 
 export default function Hero() {
@@ -24,7 +23,7 @@ export default function Hero() {
             <div>
               <ul className={classes['hero-features-list']}>
                 {HERO_BULLETS.map((bullet) => (
-                  <Li
+                  <li
                     key={bullet.id}
                     className={classes['hero-feature-item']}
                   >
@@ -36,7 +35,7 @@ export default function Hero() {
                     <p className={classes['hero-feature-text']}>
                       {bullet.bulletText}
                     </p>
-                  </Li>
+                  </li>
                 ))}
               </ul>
             </div>

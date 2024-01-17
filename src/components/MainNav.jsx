@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
-import Li from '../UI/Li';
 import classes from './MainNav.module.css';
 import { motion } from 'framer-motion';
 
