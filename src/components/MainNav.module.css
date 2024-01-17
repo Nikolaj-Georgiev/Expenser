@@ -5,6 +5,7 @@
   gap: 4.8rem;
 }
 
+.main-nav-link,
 .main-nav-link:link,
 .main-nav-link:visited {
   display: inline-block;
@@ -29,13 +30,14 @@
   background-color: #c6a406;
 }
 
+.main-nav-link,
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #c6a406;
 }
 
-.main-nav-link.nav-base:link,
-.main-nav-link.nav-base:visited {
+.main-nav-link.nav-base,
+.main-nav-link.nav-base:link .main-nav-link.nav-base:visited {
   padding: 1.2rem 2.4rem;
   border: 2px solid #f7cd08;
   border-radius: 9px;
@@ -47,4 +49,5 @@
 .main-nav-link.nav-base.active {
   color: #f8d221;
   border: 2px solid #c6a406;
+  cursor: pointer;
 }

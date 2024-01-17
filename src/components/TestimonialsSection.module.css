@@ -1,13 +1,37 @@
 .testimonials-section {
   background-color: #d9f3e5;
-  display: grid;
-  grid-template-columns: 45fr 55fr;
   align-items: center;
+  padding: 9.6rem 0;
 }
 
-.testimonials-container {
-  padding: 9.6rem;
-  /* padding: 0 3.2rem; */
+.container {
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  gap: 8rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 7.2rem;
+}
+.img {
+  max-width: 50rem;
+  margin: auto;
+  border-radius: 1.6rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(66, 196, 127, 0.267);
+}
+
+.section-container {
   max-width: 120rem;
+  padding: 0 3.2rem;
   margin: 0 auto;
+}
+
+.heading {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+  padding-left: 5.2rem;
 }

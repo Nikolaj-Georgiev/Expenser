@@ -1,10 +1,13 @@
 import Card from '../UI/Card.jsx';
-import { CARDS_INFO } from '../Util/config.js';
+import { CARDS_INFO } from '../util/config.js';
 import classes from './AboutSection.module.css';
 
 export default function AboutSectionPage() {
   return (
-    <section className={classes.about}>
+    <section
+      className={classes.about}
+      id='about'
+    >
       <div className={classes.container}>
         <h2 className={classes.heading}>
           How Expenser Helps You Track and Manage Your Expenses
