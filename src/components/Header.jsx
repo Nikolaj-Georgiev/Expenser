@@ -5,7 +5,7 @@ import classes from './Header.module.css';
 // eslint-disable-next-line react/prop-types
 export default function Header({ children }) {
   return (
-    <header className={classes.header}>
+    <header className={`${classes.header} ${classes.sticky}`}>
       <Link to='/'>
         <img
           className={classes.logo}

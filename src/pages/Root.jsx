@@ -14,7 +14,7 @@ export default function RooterLayout() {
         <Header>
           <MainNav />
         </Header>
-        <main>
+        <main className={classes.main}>
           <Outlet />
         </main>
         <Footer />
