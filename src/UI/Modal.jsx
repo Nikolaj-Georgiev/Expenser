@@ -18,6 +18,7 @@ export default function Modal({ children, title, onClose }) {
         animate='visible'
         exit='hidden'
         transition={{ duration: 0.5 }}
+        open
         className={classes.modal}
       >
         <h2>{title}</h2>

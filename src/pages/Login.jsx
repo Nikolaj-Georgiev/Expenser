@@ -1,3 +1,19 @@
+import { useNavigate, Form } from 'react-router';
+import Modal from '../UI/Modal';
+
 export default function Login() {
-  return <h2>Login to be implemented...</h2>;
+  const navigate = useNavigate();
+  function handleClose() {
+    return navigate('/');
+  }
+
+  return (
+    <Modal
+      title='Login bate'
+      onClose={handleClose}
+    >
+      <p>Opa opa</p>
+      <button onClick={handleClose}>Okay</button>
+    </Modal>
+  );
 }
