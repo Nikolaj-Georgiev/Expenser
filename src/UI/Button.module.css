@@ -4,6 +4,8 @@
   color: #555;
   font-size: 1.8rem;
   font-weight: 500;
+  border: none;
+  background-color: inherit;
 }
 
 .button.cta {
@@ -14,7 +16,7 @@
 }
 
 .button.cta:hover {
-  color: #c6a406;
+  /* color: #c6a406; */
   background-color: #c6a406;
 }
 
