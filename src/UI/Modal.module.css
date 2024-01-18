@@ -36,3 +36,7 @@
   justify-self: center;
   width: 50%;
 }
+
+.modal:focus {
+  outline: none;
+}
