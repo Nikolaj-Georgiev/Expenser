@@ -25,8 +25,8 @@ export default function LoginForm() {
         method='post'
         className={classes.form}
       >
-        <div>
-          <label htmlFor='email'>Your email address</label>
+        <div className={classes.fields}>
+          <label htmlFor='email'>email</label>
           <input
             id='email'
             type='email'
@@ -34,18 +34,20 @@ export default function LoginForm() {
             required
             autoComplete='email'
             placeholder='example@example.com'
+            className={classes.input}
           />
         </div>
-        <div>
-          <label htmlFor='password'>Your email address</label>
+        <div className={classes.fields}>
+          <label htmlFor='password'>password</label>
           <input
             id='password'
             type='password'
             name='password'
             required
             autoComplete='password'
-            placeholder='your password, minimum 6 chars'
+            placeholder='your password &#129058; minimum 6 chars'
             minLength={6}
+            className={classes.input}
           />
         </div>
         <div className={classes.box}>
