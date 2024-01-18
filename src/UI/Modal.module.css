@@ -19,7 +19,7 @@
   z-index: 1999;
   background-color: #42c47e;
   border: 2px solid #f7cd08;
-  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.32);
+  box-shadow: 0 1rem 4rem rgba(198, 163, 6, 0.74);
   display: grid;
   place-items: center;
 }
