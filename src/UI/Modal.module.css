@@ -4,8 +4,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  /* background-color: rgba(66, 196, 127, 0.87); */
-  background-color: rgba(161, 226, 191, 0.911);
+  background-color: #a1e2bf;
   z-index: 99;
 }
 
@@ -19,7 +18,7 @@
   z-index: 1999;
   background-color: #42c47e;
   border: 2px solid #f7cd08;
-  box-shadow: 0 1rem 4rem rgba(198, 163, 6, 0.74);
+  box-shadow: 0 1rem 4rem rgba(198, 163, 6, 0.66);
   display: grid;
   place-items: center;
 }
