@@ -2,7 +2,7 @@ import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import classes from './Modal.module.css';
 
-export default function Modal({ children, title, onClose }) {
+export default function Modal({ children, title, onClose, logo, alt }) {
   return createPortal(
     <>
       <div
@@ -21,7 +21,14 @@ export default function Modal({ children, title, onClose }) {
         open
         className={classes.modal}
       >
-        <h2>{title}</h2>
+        {logo ? (
+          <img
+            src={logo}
+            alt={alt}
+            className={classes.img}
+          />
+        ) : null}
+        <h2 className={classes.heading}>{title}</h2>
         {children}
       </motion.dialog>
     </>,

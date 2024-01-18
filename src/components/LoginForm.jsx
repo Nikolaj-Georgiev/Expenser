@@ -2,9 +2,10 @@ import { useNavigate } from 'react-router';
 import { Form } from 'react-router-dom';
 import Modal from '../UI/Modal';
 import Button from '../UI/Button';
-import classes from './LoginPage.module.css';
+import classes from './LoginForm.module.css';
+import logoImg from '../assets/logo-circle.png';
 
-export default function LoginPage() {
+export default function LoginForm() {
   const navigate = useNavigate();
 
   function handleNavigateToRegister() {
@@ -16,13 +17,15 @@ export default function LoginPage() {
   return (
     <Modal
       title='Login bate'
-      // onClose={handleClose}
+      logo={logoImg}
+      alt='Image of a piggy bank'
     >
       <Form
         action='/'
         method='post'
+        className={classes.form}
       >
-        <fieldset>
+        <div>
           <label htmlFor='email'>Your email address</label>
           <input
             id='email'
@@ -32,8 +35,8 @@ export default function LoginPage() {
             autoComplete='email'
             placeholder='example@example.com'
           />
-        </fieldset>
-        <fieldset>
+        </div>
+        <div>
           <label htmlFor='password'>Your email address</label>
           <input
             id='password'
@@ -44,7 +47,7 @@ export default function LoginPage() {
             placeholder='your password, minimum 6 chars'
             minLength={6}
           />
-        </fieldset>
+        </div>
         <div className={classes.box}>
           <Button
             isText={true}

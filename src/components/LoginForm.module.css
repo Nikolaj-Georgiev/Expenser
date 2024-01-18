@@ -1,0 +1,15 @@
+.box {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5rem;
+}
+
+.form {
+  max-width: 40rem;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2.4rem;
+  padding: 3.2rem;
+  margin: auto;
+  background-color: inherit;
+}
