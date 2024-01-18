@@ -2,6 +2,7 @@
   display: inline-block;
   text-decoration: none;
   color: #555;
+  font-family: inherit;
   font-size: 1.8rem;
   font-weight: 500;
   border: none;
