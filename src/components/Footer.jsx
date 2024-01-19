@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className={classes.container}>
       <p className={classes.copyright}>
-        Copyright &copy; 2024 by GNikolay. All tights reserved!
+        Copyright &copy; 2024 by NGNikolay. All tights reserved!
       </p>
       <div className={classes.box}>
         <p className={classes.contacts}>created and designed by</p>
@@ -13,7 +13,7 @@ export default function Footer() {
           whileHover={{ scale: 2, transition: { duration: 0.5 } }}
           className={classes.heading}
         >
-          GNikolay
+          NGNikolay
         </motion.span>
       </div>
       <div className={classes.box}>
