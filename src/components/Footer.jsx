@@ -1,4 +1,5 @@
 import classes from './Footer.module.css';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
@@ -8,15 +9,23 @@ export default function Footer() {
       </p>
       <div className={classes.box}>
         <p className={classes.contacts}>created and designed by</p>
-        <span className={classes.heading}>GNikolay</span>
+        <motion.span
+          whileHover={{ scale: 2, transition: { duration: 0.5 } }}
+          className={classes.heading}
+        >
+          GNikolay
+        </motion.span>
       </div>
       <div className={classes.box}>
         <p className={classes.contacts}>Contact me</p>
         <ul className={classes.links}>
-          <li>
+          <motion.li
+            whileHover={{ scale: 2 }}
+            whileTap={{ scale: 0.85 }}
+          >
             <a
               className={classes.link}
-              href='#'
+              href='https://www.facebook.com/nikolay.georgiev.7503/'
               target='_blank'
               rel='noreferrer'
             >
@@ -25,8 +34,11 @@ export default function Footer() {
                 name='logo-facebook'
               ></ion-icon>
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 2 }}
+            whileTap={{ scale: 0.85 }}
+          >
             <a
               className={classes.link}
               href='https://github.com/NGNikolay'
@@ -38,11 +50,14 @@ export default function Footer() {
                 name='logo-github'
               ></ion-icon>
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 2 }}
+            whileTap={{ scale: 0.85 }}
+          >
             <a
               className={classes.link}
-              href='#'
+              href='https://www.linkedin.com/in/nikolay-georgiev-73556635/'
               target='_blank'
               rel='noreferrer'
             >
@@ -51,7 +66,7 @@ export default function Footer() {
                 name='logo-linkedin'
               ></ion-icon>
             </a>
-          </li>
+          </motion.li>
         </ul>
       </div>
     </footer>

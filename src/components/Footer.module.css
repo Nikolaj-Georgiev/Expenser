@@ -12,6 +12,10 @@
   border-top: 0.3rem solid #f7cd08;
 }
 
+.container span:hover {
+  color: #f7cd08;
+}
+
 .links {
   list-style: none;
   display: flex;
@@ -43,6 +47,7 @@
   font-weight: 500;
   color: #6f6f6f;
   text-transform: lowercase;
+  margin: auto;
 }
 
 .link:link,
