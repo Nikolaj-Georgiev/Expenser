@@ -8,6 +8,7 @@ import Register from './pages/Register.jsx';
 // import Testimonials from './pages/Testimonials.jsx';
 import ErrorPage from './pages/Error.jsx';
 import LandingPage from './pages/LandingPage.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,8 +23,7 @@ const router = createBrowserRouter([
       // { index: true, element: <Hero /> },
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
-      // { path: 'about', element: <About /> },
-      // { path: 'testimonials', element: <Testimonials /> },
+      { path: 'dashboard', element: <Dashboard /> },
     ],
   },
 ]);
