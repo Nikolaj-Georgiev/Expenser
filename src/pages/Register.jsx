@@ -40,17 +40,12 @@ export async function action({ request }) {
   };
 
   try {
-    const data = await signUp(user);
-    if (data.status) {
-      const err = new Error({ data });
-      throw err; //bullshit...fix it!
+    await signUp(user);
+  } catch (err) {
+    if (err.status === 422) {
+      return err;
     }
-  } catch (error) {
-    if (error.status === 422) {
-      throw error;
-    }
-
-    throw error;
+    throw err;
   }
 
   return redirect('/dashboard');

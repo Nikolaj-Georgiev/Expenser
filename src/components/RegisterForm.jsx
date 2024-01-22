@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Form } from 'react-router-dom';
 import Button from '../UI/Button';
 import classes from './RegisterForm.module.css';
