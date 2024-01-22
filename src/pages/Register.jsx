@@ -3,13 +3,16 @@ import RegisterForm from '../components/RegisterForm';
 import logoImg from '../assets/logo-circle.png';
 import { signUp } from '../services/apiAuth';
 import { redirect, useNavigate } from 'react-router-dom';
-import { handleCancel } from '../util/config';
 
 export default function Register() {
   const navigate = useNavigate();
 
   function handleLoginNavigate() {
     navigate('/login');
+  }
+
+  function handleCancel() {
+    navigate('/');
   }
 
   return (

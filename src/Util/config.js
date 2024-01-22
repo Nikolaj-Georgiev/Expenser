@@ -155,8 +155,4 @@ export const CUSTOMERS = [
   }
 ]
 
-export function handleCancel() {
-  redirect('/');
-}
-
 export const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFib2J0cWx0cmZoZXhsaHdiamlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU0MjE1NDAsImV4cCI6MjAyMDk5NzU0MH0.n6Ha3kWvSfOGQrsWJoMFodmL-vGCmmsoiEtto7ueCPg';

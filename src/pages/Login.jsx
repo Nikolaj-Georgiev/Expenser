@@ -2,7 +2,6 @@ import LoginForm from '../components/LoginForm';
 import logoImg from '../assets/logo-circle.png';
 import Modal from '../UI/Modal';
 import { login } from '../services/apiAuth.js';
-import { handleCancel } from '../util/config.js';
 
 import {
   redirect,
@@ -18,6 +17,10 @@ function LoginPage() {
 
   function handleRegisterNavigate() {
     navigate('/register');
+  }
+
+  function handleCancel() {
+    navigate('/');
   }
 
   return (

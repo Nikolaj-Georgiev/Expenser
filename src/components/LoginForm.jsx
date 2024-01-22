@@ -38,18 +38,28 @@ export default function LoginForm({ onCancel, submitting, isInvalid, onNav }) {
       </div>
       <div className={classes.box}>
         <Button
+          isCta={true}
+          disabled={submitting}
+          moreCss={classes.action}
+        >
+          {submitting ? 'Submitting...' : 'Login'}
+        </Button>
+        <Button
           type='button'
           isText={true}
           onClick={onNav}
           disabled={submitting}
+          moreCss={classes.navigate}
         >
           No account? Register!
         </Button>
         <Button
-          isCta={true}
-          disabled={submitting}
+          type='button'
+          isText={true}
+          onClick={onCancel}
+          moreCss={classes.cancel}
         >
-          {submitting ? 'Submitting...' : 'Login'}
+          Cancel
         </Button>
       </div>
     </Form>
