@@ -3,14 +3,12 @@ import { Form } from 'react-router-dom';
 import Button from '../UI/Button';
 import classes from './RegisterForm.module.css';
 
-export default function RegisterForm() {
+export default function RegisterForm({ onCancel, submitting, onNav }) {
   const navigate = useNavigate();
 
   function handleNavigateToRegister() {
     return navigate('/login');
   }
-
-  function handleSubmit() {}
 
   return (
     <Form
@@ -64,12 +62,7 @@ export default function RegisterForm() {
         >
           Already have an account? Login!
         </Button>
-        <Button
-          isCta={true}
-          onSubmit={handleSubmit}
-        >
-          Register
-        </Button>
+        <Button isCta={true}>Register</Button>
       </div>
     </Form>
   );

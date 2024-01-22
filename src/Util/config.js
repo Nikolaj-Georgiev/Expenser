@@ -19,6 +19,9 @@ import imageCustomer4 from '../assets/customers/stephanie.jpg'
 import imageChart1 from '../assets/customers/chart1.webp'
 import imageChart2 from '../assets/customers/chart2.webp'
 
+
+import { redirect } from 'react-router-dom';
+
 export const CARDS_INFO = [
   {
     id: '1C',
@@ -151,5 +154,9 @@ export const CUSTOMERS = [
     name: ' Kevin, 37'
   }
 ]
+
+export function handleCancel() {
+  redirect('/');
+}
 
 export const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFib2J0cWx0cmZoZXhsaHdiamlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU0MjE1NDAsImV4cCI6MjAyMDk5NzU0MH0.n6Ha3kWvSfOGQrsWJoMFodmL-vGCmmsoiEtto7ueCPg';

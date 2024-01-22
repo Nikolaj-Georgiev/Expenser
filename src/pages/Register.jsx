@@ -2,16 +2,26 @@ import Modal from '../UI/Modal';
 import RegisterForm from '../components/RegisterForm';
 import logoImg from '../assets/logo-circle.png';
 import { signUp } from '../services/apiAuth';
-import { redirect } from 'react-router-dom';
+import { redirect, useNavigate } from 'react-router-dom';
+import { handleCancel } from '../util/config';
 
 export default function Register() {
+  const navigate = useNavigate();
+
+  function handleLoginNavigate() {
+    navigate('/login');
+  }
+
   return (
     <Modal
       title='Register'
       logo={logoImg}
       alt='Image of a piggy bank'
     >
-      <RegisterForm />
+      <RegisterForm
+        onNav={handleLoginNavigate}
+        onCancel={handleCancel}
+      />
     </Modal>
   );
 }

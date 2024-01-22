@@ -4,8 +4,7 @@ import { Form } from 'react-router-dom';
 import Button from '../UI/Button';
 import classes from './LoginForm.module.css';
 
-export default function LoginForm({ onCancel, submitting, isInvalid }) {
-
+export default function LoginForm({ onCancel, submitting, isInvalid, onNav }) {
   return (
     <Form
       action='/login'
@@ -41,7 +40,7 @@ export default function LoginForm({ onCancel, submitting, isInvalid }) {
         <Button
           type='button'
           isText={true}
-          onClick={onCancel}
+          onClick={onNav}
           disabled={submitting}
         >
           No account? Register!
