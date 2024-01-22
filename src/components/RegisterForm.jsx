@@ -14,7 +14,7 @@ export default function RegisterForm() {
 
   return (
     <Form
-      action='/'
+      action='/register'
       method='post'
       className={classes.form}
     >
@@ -58,6 +58,7 @@ export default function RegisterForm() {
       </div>
       <div className={classes.box}>
         <Button
+          type='button'
           isText={true}
           onClick={handleNavigateToRegister}
         >

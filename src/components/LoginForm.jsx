@@ -1,20 +1,13 @@
-import { useNavigate } from 'react-router';
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { Form } from 'react-router-dom';
 import Button from '../UI/Button';
 import classes from './LoginForm.module.css';
 
-export default function LoginForm() {
-  const navigate = useNavigate();
-
-  function handleNavigateToRegister() {
-    return navigate('/register');
-  }
-
-  function handleSubmit() {}
-
+export default function LoginForm({ onCancel, submitting, isInvalid }) {
   return (
     <Form
-      action='/'
+      action='/login'
       method='post'
       className={classes.form}
     >
@@ -45,16 +38,18 @@ export default function LoginForm() {
       </div>
       <div className={classes.box}>
         <Button
+          type='button'
           isText={true}
-          onClick={handleNavigateToRegister}
+          onClick={onCancel}
+          disabled={submitting}
         >
           No account? Register!
         </Button>
         <Button
           isCta={true}
-          onSubmit={handleSubmit}
+          disabled={submitting}
         >
-          Login
+          {submitting ? 'Submitting...' : 'Login'}
         </Button>
       </div>
     </Form>
