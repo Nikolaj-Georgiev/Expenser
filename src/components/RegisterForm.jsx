@@ -1,15 +1,8 @@
-import { useNavigate } from 'react-router';
 import { Form } from 'react-router-dom';
 import Button from '../UI/Button';
 import classes from './RegisterForm.module.css';
 
 export default function RegisterForm({ onCancel, submitting, onNav }) {
-  const navigate = useNavigate();
-
-  function handleNavigateToRegister() {
-    return navigate('/login');
-  }
-
   return (
     <Form
       action='/register'
@@ -56,13 +49,27 @@ export default function RegisterForm({ onCancel, submitting, onNav }) {
       </div>
       <div className={classes.box}>
         <Button
+          isCta={true}
+          moreCss={classes.action}
+        >
+          Register
+        </Button>
+        <Button
           type='button'
           isText={true}
-          onClick={handleNavigateToRegister}
+          onClick={onNav}
+          moreCss={classes.redirect}
         >
-          Already have an account? Login!
+          Have an account? Login!
         </Button>
-        <Button isCta={true}>Register</Button>
+        <Button
+          type='button'
+          isText={true}
+          onClick={onCancel}
+          moreCss={classes.cancel}
+        >
+          Cancel
+        </Button>
       </div>
     </Form>
   );

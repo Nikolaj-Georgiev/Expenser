@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import classes from './Button.module.css';
 
-export default function Button({ children, isCta, isText, ...props }) {
+export default function Button({ children, isCta, isText, moreCss, ...props }) {
   let cssClasses = `${classes.button}`;
 
   if (isCta) {
@@ -11,6 +11,10 @@ export default function Button({ children, isCta, isText, ...props }) {
 
   if (isText) {
     cssClasses = `${cssClasses} ${classes.text}`;
+  }
+
+  if (moreCss) {
+    cssClasses = `${cssClasses} ${moreCss}`;
   }
 
   return (
