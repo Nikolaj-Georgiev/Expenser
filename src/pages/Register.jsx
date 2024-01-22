@@ -2,16 +2,31 @@ import Modal from '../UI/Modal';
 import RegisterForm from '../components/RegisterForm';
 import logoImg from '../assets/logo-circle.png';
 import { signUp } from '../services/apiAuth';
-import { redirect } from 'react-router-dom';
+import { redirect, useNavigate, useNavigation } from 'react-router-dom';
 
 export default function Register() {
+  const navigate = useNavigate();
+  const navigation = useNavigation();
+
+  function handleLoginNavigate() {
+    navigate('/login');
+  }
+
+  function handleCancel() {
+    navigate('/');
+  }
+
   return (
     <Modal
       title='Register'
       logo={logoImg}
       alt='Image of a piggy bank'
     >
-      <RegisterForm />
+      <RegisterForm
+        onNav={handleLoginNavigate}
+        onCancel={handleCancel}
+        submitting={navigation.state === 'submitting'}
+      />
     </Modal>
   );
 }
@@ -25,17 +40,12 @@ export async function action({ request }) {
   };
 
   try {
-    const data = await signUp(user);
-    if (data.status) {
-      const err = new Error({ data });
-      throw err; //bullshit...fix it!
+    await signUp(user);
+  } catch (err) {
+    if (err.status === 422) {
+      return err;
     }
-  } catch (error) {
-    if (error.status === 422) {
-      throw error;
-    }
-
-    throw error;
+    throw err;
   }
 
   return redirect('/dashboard');

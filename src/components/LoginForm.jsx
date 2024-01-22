@@ -3,9 +3,9 @@
 import { Form } from 'react-router-dom';
 import Button from '../UI/Button';
 import classes from './LoginForm.module.css';
+import { MiniLoader } from '../UI/MiniLoader';
 
-export default function LoginForm({ onCancel, submitting, isInvalid }) {
-
+export default function LoginForm({ onCancel, submitting, isInvalid, onNav }) {
   return (
     <Form
       action='/login'
@@ -39,18 +39,28 @@ export default function LoginForm({ onCancel, submitting, isInvalid }) {
       </div>
       <div className={classes.box}>
         <Button
+          isCta={true}
+          disabled={submitting}
+          moreCss={classes.action}
+        >
+          {submitting ? <MiniLoader /> : 'Login'}
+        </Button>
+        <Button
           type='button'
           isText={true}
-          onClick={onCancel}
+          onClick={onNav}
           disabled={submitting}
+          moreCss={classes.navigate}
         >
           No account? Register!
         </Button>
         <Button
-          isCta={true}
-          disabled={submitting}
+          type='button'
+          isText={true}
+          onClick={onCancel}
+          moreCss={classes.cancel}
         >
-          {submitting ? 'Submitting...' : 'Login'}
+          Cancel
         </Button>
       </div>
     </Form>

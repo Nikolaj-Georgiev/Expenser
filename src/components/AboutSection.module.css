@@ -12,7 +12,7 @@
   align-items: center;
 }
 .about {
-  padding: 9.6rem 6.4rem;
+  padding: 6.4rem 6.4rem;
   border-bottom: solid 1px #42c47e;
   background-color: #ecf9f2;
 }
@@ -20,6 +20,6 @@
 .heading {
   font-size: 4.4rem;
   line-height: 1.2;
-  margin-bottom: 9.6rem;
+  margin-bottom: 6.4rem;
   padding-left: 5.2rem;
 }

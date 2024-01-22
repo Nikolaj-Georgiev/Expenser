@@ -1,17 +1,10 @@
-import { useNavigate } from 'react-router';
+/* eslint-disable react/prop-types */
 import { Form } from 'react-router-dom';
 import Button from '../UI/Button';
 import classes from './RegisterForm.module.css';
+import { MiniLoader } from '../UI/MiniLoader';
 
-export default function RegisterForm() {
-  const navigate = useNavigate();
-
-  function handleNavigateToRegister() {
-    return navigate('/login');
-  }
-
-  function handleSubmit() {}
-
+export default function RegisterForm({ onCancel, submitting, onNav }) {
   return (
     <Form
       action='/register'
@@ -58,17 +51,26 @@ export default function RegisterForm() {
       </div>
       <div className={classes.box}>
         <Button
-          type='button'
-          isText={true}
-          onClick={handleNavigateToRegister}
+          isCta={true}
+          moreCss={classes.action}
         >
-          Already have an account? Login!
+          {submitting ? <MiniLoader /> : 'Register'}
         </Button>
         <Button
-          isCta={true}
-          onSubmit={handleSubmit}
+          type='button'
+          isText={true}
+          onClick={onNav}
+          moreCss={classes.redirect}
         >
-          Register
+          Have an account? Login!
+        </Button>
+        <Button
+          type='button'
+          isText={true}
+          onClick={onCancel}
+          moreCss={classes.cancel}
+        >
+          Cancel
         </Button>
       </div>
     </Form>

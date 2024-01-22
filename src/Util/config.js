@@ -19,6 +19,9 @@ import imageCustomer4 from '../assets/customers/stephanie.jpg'
 import imageChart1 from '../assets/customers/chart1.webp'
 import imageChart2 from '../assets/customers/chart2.webp'
 
+
+import { redirect } from 'react-router-dom';
+
 export const CARDS_INFO = [
   {
     id: '1C',

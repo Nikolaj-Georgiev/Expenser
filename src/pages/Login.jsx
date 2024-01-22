@@ -15,8 +15,12 @@ function LoginPage() {
   const navigate = useNavigate();
   const navigation = useNavigation();
 
-  function handleRegisterRedirect() {
+  function handleRegisterNavigate() {
     navigate('/register');
+  }
+
+  function handleCancel() {
+    navigate('/');
   }
 
   return (
@@ -26,9 +30,10 @@ function LoginPage() {
       alt='Image of a piggy bank'
     >
       <LoginForm
-        onCancel={handleRegisterRedirect}
+        onCancel={handleCancel}
         submitting={navigation.state === 'submitting'}
         isInvalid={(data && data.status && true) || false}
+        onNav={handleRegisterNavigate}
       />
     </Modal>
   );
@@ -45,12 +50,12 @@ export async function action({ request }) {
 
   try {
     await login(user);
-  } catch (error) {
-    if (error.status === 422) {
-      throw error;
+  } catch (err) {
+    if (err.status === 422) {
+      throw err;
     }
 
-    throw error;
+    throw err;
   }
 
   return redirect('/dashboard');

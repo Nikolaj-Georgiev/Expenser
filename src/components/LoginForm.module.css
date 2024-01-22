@@ -1,7 +1,23 @@
 .box {
-  display: flex;
-  justify-content: flex-end;
-  gap: 4.8rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+  justify-content: stretch;
+  gap: 2.4rem;
+}
+
+.action {
+  grid-column: 1 / 6;
+  width: -webkit-fill-available;
+}
+.navigate {
+  grid-column: 1 / 5;
+  width: -webkit-fill-available;
+}
+.cancel {
+  grid-column: 5 / 6;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
 }
 
 .form {
