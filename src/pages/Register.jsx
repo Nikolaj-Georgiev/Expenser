@@ -2,10 +2,11 @@ import Modal from '../UI/Modal';
 import RegisterForm from '../components/RegisterForm';
 import logoImg from '../assets/logo-circle.png';
 import { signUp } from '../services/apiAuth';
-import { redirect, useNavigate } from 'react-router-dom';
+import { redirect, useNavigate, useNavigation } from 'react-router-dom';
 
 export default function Register() {
   const navigate = useNavigate();
+  const navigation = useNavigation();
 
   function handleLoginNavigate() {
     navigate('/login');
@@ -24,6 +25,7 @@ export default function Register() {
       <RegisterForm
         onNav={handleLoginNavigate}
         onCancel={handleCancel}
+        submitting={navigation.state === 'submitting'}
       />
     </Modal>
   );

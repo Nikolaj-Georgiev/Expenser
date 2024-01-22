@@ -3,6 +3,7 @@
 import { Form } from 'react-router-dom';
 import Button from '../UI/Button';
 import classes from './LoginForm.module.css';
+import { MiniLoader } from '../UI/MiniLoader';
 
 export default function LoginForm({ onCancel, submitting, isInvalid, onNav }) {
   return (
@@ -42,7 +43,7 @@ export default function LoginForm({ onCancel, submitting, isInvalid, onNav }) {
           disabled={submitting}
           moreCss={classes.action}
         >
-          {submitting ? 'Submitting...' : 'Login'}
+          {submitting ? <MiniLoader /> : 'Login'}
         </Button>
         <Button
           type='button'

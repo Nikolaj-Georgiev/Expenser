@@ -1,6 +1,7 @@
 import { Form } from 'react-router-dom';
 import Button from '../UI/Button';
 import classes from './RegisterForm.module.css';
+import { MiniLoader } from '../UI/MiniLoader';
 
 export default function RegisterForm({ onCancel, submitting, onNav }) {
   return (
@@ -52,7 +53,7 @@ export default function RegisterForm({ onCancel, submitting, onNav }) {
           isCta={true}
           moreCss={classes.action}
         >
-          Register
+          {submitting ? <MiniLoader /> : 'Register'}
         </Button>
         <Button
           type='button'
