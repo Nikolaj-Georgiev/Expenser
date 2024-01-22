@@ -1,0 +1,13 @@
+.heading {
+  font-family: inherit;
+  font-size: 4.8rem;
+  font-weight: 600;
+  margin: 4.8rem 50rem;
+}
+
+.list {
+  padding: 25rem;
+  font-family: inherit;
+  font-size: large;
+  font-weight: 500;
+}

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import classes from './PageContent.module.css';
+import classes from './ErrorPageContent.module.css';
 
-export default function PageContent({
+export default function ErrorPageContent({
   img,
   imgText,
   title,

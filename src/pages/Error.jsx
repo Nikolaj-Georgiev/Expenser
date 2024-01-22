@@ -2,7 +2,7 @@
 import { useRouteError } from 'react-router-dom';
 import brokenPigImg from '../assets/brokenPig3.webp';
 
-import PageContent from '../components/PageContent.jsx';
+import ErrorPageContent from '../components/ErrorPageContent.jsx';
 import MainNav from '../components/MainNav.jsx';
 import Header from '../components/Header.jsx';
 
@@ -26,14 +26,14 @@ export default function ErrorPage() {
       <Header>
         <MainNav />
       </Header>
-      <PageContent
+      <ErrorPageContent
         title={title}
         img={brokenPigImg}
         imgText='Broken piggy bank'
         cssClass='broken-piggy-bank'
       >
         {message}
-      </PageContent>
+      </ErrorPageContent>
     </>
   );
 }

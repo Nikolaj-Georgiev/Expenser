@@ -21,7 +21,7 @@
   padding-top: 0;
   padding-bottom: 0;
   background-color: rgba(66, 196, 127, 0.97);
-  z-index: 999;
+  z-index: 9;
   box-shadow: 0 1.2rem 3.2rem rgba(247, 203, 8, 0.199);
 }
 

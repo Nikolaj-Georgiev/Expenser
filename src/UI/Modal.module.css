@@ -1,0 +1,41 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #a1e2bf;
+  z-index: 99;
+}
+
+.modal {
+  top: 10%;
+  margin: auto;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  width: 50rem;
+  max-width: 90%;
+  z-index: 1999;
+  background-color: #42c47e;
+  border: 2px solid #f7cd08;
+  box-shadow: 0 1rem 4rem rgba(198, 163, 6, 0.66);
+  display: grid;
+  place-items: center;
+}
+
+.heading {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+  text-align: center;
+  color: #555;
+}
+
+.img {
+  justify-self: center;
+  width: 50%;
+}
+
+.modal:focus {
+  outline: none;
+}
