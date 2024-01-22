@@ -1,14 +1,13 @@
-// import Hero from './components/Hero';
-
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
 import RooterLayout from './pages/Root.jsx';
-import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
-// import About from './pages/About.jsx';
-// import Testimonials from './pages/Testimonials.jsx';
 import ErrorPage from './pages/Error.jsx';
 import LandingPage from './pages/LandingPage.jsx';
 import Dashboard from './pages/Dashboard.jsx';
+import { action as loginAction } from './pages/Login.jsx';
+
+import LoginPage from './pages/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,9 +19,18 @@ const router = createBrowserRouter([
         index: true,
         element: <LandingPage />,
       },
-      // { index: true, element: <Hero /> },
-      { path: 'login', element: <Login /> },
-      { path: 'register', element: <Register /> },
+      {
+        path: 'login',
+        element: <LoginPage />,
+        action: loginAction,
+      },
+      {
+        path: 'register',
+        element: <Register />,
+        action: () => {
+          console.log('pesho');
+        },
+      },
       { path: 'dashboard', element: <Dashboard /> },
     ],
   },

@@ -5,7 +5,7 @@ import logoImg from '../assets/logo-circle.png';
 export default function Register() {
   return (
     <Modal
-      title='Login'
+      title='Register'
       logo={logoImg}
       alt='Image of a piggy bank'
     >

@@ -8,17 +8,23 @@ import Header from '../components/Header.jsx';
 
 export default function ErrorPage() {
   const error = useRouteError();
+  console.log(error);
 
   let title = 'An error has occured!';
   let message = 'Something went wrong';
 
   if (error.status === 500) {
-    message = error.data.message;
+    message = error.message;
   }
 
   if (error.status === 404) {
-    title = 'Not found!';
+    title = 'Page not found!';
     message = 'Could not find resource or page.';
+  }
+
+  if (error.status === 422) {
+    title = 'Unable to login';
+    message = error.message;
   }
 
   return (
