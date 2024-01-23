@@ -1,7 +1,9 @@
 import Modal from '../UI/Modal';
-import RegisterForm from '../components/RegisterForm';
 import logoImg from '../assets/logo-circle.png';
 import { signUp } from '../services/apiAuth';
+import AuthForm from '../components/AuthForm';
+import { loginActions } from '../store/auth-form-slice';
+
 import {
   redirect,
   useActionData,
@@ -9,13 +11,20 @@ import {
   useNavigation,
 } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useDispatch } from 'react-redux';
 
 export default function Register() {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
 
+  const dispatch = useDispatch();
+  function toggleAuthFormHandler(formMode) {
+    dispatch(loginActions.toggle(formMode));
+  }
+
   function handleLoginNavigate() {
+    toggleAuthFormHandler('login');
     navigate('/login');
   }
 
@@ -47,9 +56,10 @@ export default function Register() {
           {data.message}
         </motion.p>
       )}
-      <RegisterForm
+      <AuthForm
         onNav={handleLoginNavigate}
         onCancel={handleCancel}
+        initialMode='register'
         submitting={navigation.state === 'submitting'}
       />
     </Modal>

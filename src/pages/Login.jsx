@@ -1,22 +1,30 @@
-import LoginForm from '../components/LoginForm';
 import logoImg from '../assets/logo-circle.png';
 import Modal from '../UI/Modal';
 import { login } from '../services/apiAuth.js';
-import { motion } from 'framer-motion';
+import AuthForm from '../components/AuthForm.jsx';
+import { loginActions } from '../store/auth-form-slice.js';
 
+import { motion } from 'framer-motion';
 import {
   redirect,
   useActionData,
   useNavigate,
   useNavigation,
 } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 function LoginPage() {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
 
+  const dispatch = useDispatch();
+  function toggleAuthFormHandler(formMode) {
+    dispatch(loginActions.toggle(formMode));
+  }
+
   function handleRegisterNavigate() {
+    toggleAuthFormHandler('register');
     navigate('/register');
   }
 
@@ -48,10 +56,10 @@ function LoginPage() {
           {data.message}
         </motion.p>
       )}
-      <LoginForm
+      <AuthForm
         onCancel={handleCancel}
         submitting={navigation.state === 'submitting'}
-        isInvalid={(data && data.status && true) || false}
+        initialMode='login'
         onNav={handleRegisterNavigate}
       />
     </Modal>

@@ -1,12 +1,22 @@
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
-import classes from './MainNav.module.css';
 import { motion } from 'framer-motion';
+import { useDispatch } from 'react-redux';
+
+import { loginActions } from '../store/auth-form-slice';
+import classes from './MainNav.module.css';
 
 export default function MainNav() {
   const linkCssClass = `${classes['main-nav-link']} ${classes['nav-base']}`;
   const active = `${linkCssClass} ${classes.active}`;
   const buttonsCssClass = `${classes['main-nav-link']} ${classes['nav-cta']}`;
+
+  const dispatch = useDispatch();
+
+  function toggleAuthFormHandler(formMode) {
+    dispatch(loginActions.toggle(formMode));
+  }
+
   return (
     <nav className={classes['main-nav']}>
       <ul className={classes['main-nav-list']}>
@@ -49,6 +59,7 @@ export default function MainNav() {
           <Link
             className={buttonsCssClass}
             to='login'
+            onClick={() => toggleAuthFormHandler('login')}
           >
             Login
           </Link>
@@ -61,6 +72,7 @@ export default function MainNav() {
           <Link
             className={buttonsCssClass}
             to='register'
+            onClick={() => toggleAuthFormHandler('register')}
           >
             Register
           </Link>
