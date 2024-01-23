@@ -5,7 +5,7 @@ import Footer from '../components/Footer.jsx';
 
 import { Outlet } from 'react-router-dom';
 
-import classes from './Root.module.css';
+import classes from './Rout.module.css';
 
 export default function RouterLayout() {
   return (
