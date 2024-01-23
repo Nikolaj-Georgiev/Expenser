@@ -1,14 +1,28 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Form } from 'react-router-dom';
-import Button from '../UI/Button';
-import classes from './LoginForm.module.css';
-import { MiniLoader } from '../UI/MiniLoader';
+import { Form, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-export default function LoginForm({ onCancel, submitting, isInvalid, onNav }) {
+import Button from '../UI/Button';
+import { MiniLoader } from '../UI/MiniLoader';
+import classes from './AuthForm.module.css';
+
+export default function AuthForm({ submitting, onNav, initialMode }) {
+  const navigate = useNavigate();
+
+  function handleCancel() {
+    navigate('/');
+  }
+
+  const modeSelector = useSelector((state) => state.authForm);
+  const mode = modeSelector.formMode ?? initialMode;
+
+  const submitName = `${mode.slice(0, 1).toUpperCase()}${mode.slice(1)}`;
+  const navigateName =
+    mode === 'login' ? 'No account? Register!' : 'Have an account? Login!';
+
   return (
     <Form
-      action='/login'
+      action={`/${mode}`}
       method='post'
       className={classes.form}
     >
@@ -37,27 +51,43 @@ export default function LoginForm({ onCancel, submitting, isInvalid, onNav }) {
           className={classes.input}
         />
       </div>
+      {mode === 'register' && (
+        <div className={classes.fields}>
+          <label htmlFor='password'>repeat password</label>
+          <input
+            id='re-password'
+            type='password'
+            name='re-password'
+            required
+            autoComplete='password'
+            placeholder='repeat your password'
+            minLength={6}
+            className={classes.input}
+          />
+        </div>
+      )}
+
       <div className={classes.box}>
         <Button
           isCta={true}
-          disabled={submitting}
           moreCss={classes.action}
+          disabled={submitting}
         >
-          {submitting ? <MiniLoader /> : 'Login'}
+          {submitting ? <MiniLoader /> : submitName}
         </Button>
         <Button
           type='button'
           isText={true}
           onClick={onNav}
           disabled={submitting}
-          moreCss={classes.navigate}
+          moreCss={classes.redirect}
         >
-          No account? Register!
+          {navigateName}
         </Button>
         <Button
           type='button'
           isText={true}
-          onClick={onCancel}
+          onClick={handleCancel}
           disabled={submitting}
           moreCss={classes.cancel}
         >

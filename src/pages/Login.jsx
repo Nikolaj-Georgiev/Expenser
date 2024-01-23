@@ -1,8 +1,9 @@
-import LoginForm from '../components/LoginForm';
 import logoImg from '../assets/logo-circle.png';
 import Modal from '../UI/Modal';
 import { login } from '../services/apiAuth.js';
-import { motion } from 'framer-motion';
+import AuthForm from '../components/AuthForm.jsx';
+import { loginActions } from '../store/auth-form-slice.js';
+import TextValidationMessage from '../UI/TextValidationMessage.jsx';
 
 import {
   redirect,
@@ -10,18 +11,21 @@ import {
   useNavigate,
   useNavigation,
 } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 function LoginPage() {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
 
-  function handleRegisterNavigate() {
-    navigate('/register');
+  const dispatch = useDispatch();
+  function toggleAuthFormHandler(formMode) {
+    dispatch(loginActions.toggle(formMode));
   }
 
-  function handleCancel() {
-    navigate('/');
+  function handleRegisterNavigate() {
+    toggleAuthFormHandler('register');
+    navigate('/register');
   }
 
   return (
@@ -31,27 +35,11 @@ function LoginPage() {
       alt='Image of a piggy bank'
     >
       {data && data.status && (
-        <motion.p
-          style={{
-            y: -100,
-            color: '#F7CD08',
-            fontSize: '1.8rem',
-            fontWeight: 500,
-            textTransform: 'uppercase',
-          }}
-          animate={{
-            y: 0,
-            transition: { type: 'spring' },
-          }}
-          whileHover={{ scaleX: 1.3 }}
-        >
-          {data.message}
-        </motion.p>
+        <TextValidationMessage>{data.message}</TextValidationMessage>
       )}
-      <LoginForm
-        onCancel={handleCancel}
+      <AuthForm
         submitting={navigation.state === 'submitting'}
-        isInvalid={(data && data.status && true) || false}
+        initialMode='login'
         onNav={handleRegisterNavigate}
       />
     </Modal>
