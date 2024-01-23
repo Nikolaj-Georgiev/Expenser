@@ -2,9 +2,16 @@ import Modal from '../UI/Modal';
 import RegisterForm from '../components/RegisterForm';
 import logoImg from '../assets/logo-circle.png';
 import { signUp } from '../services/apiAuth';
-import { redirect, useNavigate, useNavigation } from 'react-router-dom';
+import {
+  redirect,
+  useActionData,
+  useNavigate,
+  useNavigation,
+} from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function Register() {
+  const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
 
@@ -22,6 +29,24 @@ export default function Register() {
       logo={logoImg}
       alt='Image of a piggy bank'
     >
+      {data && data.status && (
+        <motion.p
+          style={{
+            y: -100,
+            color: '#F7CD08',
+            fontSize: '1.8rem',
+            fontWeight: 500,
+            textTransform: 'uppercase',
+          }}
+          animate={{
+            y: 0,
+            transition: { type: 'spring' },
+          }}
+          whileHover={{ scaleX: 1.3 }}
+        >
+          {data.message}
+        </motion.p>
+      )}
       <RegisterForm
         onNav={handleLoginNavigate}
         onCancel={handleCancel}

@@ -53,6 +53,7 @@ export default function RegisterForm({ onCancel, submitting, onNav }) {
         <Button
           isCta={true}
           moreCss={classes.action}
+          disabled={submitting}
         >
           {submitting ? <MiniLoader /> : 'Register'}
         </Button>
@@ -60,6 +61,7 @@ export default function RegisterForm({ onCancel, submitting, onNav }) {
           type='button'
           isText={true}
           onClick={onNav}
+          disabled={submitting}
           moreCss={classes.redirect}
         >
           Have an account? Login!
@@ -68,6 +70,7 @@ export default function RegisterForm({ onCancel, submitting, onNav }) {
           type='button'
           isText={true}
           onClick={onCancel}
+          disabled={submitting}
           moreCss={classes.cancel}
         >
           Cancel

@@ -58,6 +58,7 @@ export default function LoginForm({ onCancel, submitting, isInvalid, onNav }) {
           type='button'
           isText={true}
           onClick={onCancel}
+          disabled={submitting}
           moreCss={classes.cancel}
         >
           Cancel

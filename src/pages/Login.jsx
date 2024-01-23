@@ -32,14 +32,18 @@ function LoginPage() {
     >
       {data && data.status && (
         <motion.p
-          style={{ y: -50 }}
-          animate={{
-            y: 0,
+          style={{
+            y: -100,
             color: '#F7CD08',
             fontSize: '1.8rem',
             fontWeight: 500,
             textTransform: 'uppercase',
           }}
+          animate={{
+            y: 0,
+            transition: { type: 'spring' },
+          }}
+          whileHover={{ scaleX: 1.3 }}
         >
           {data.message}
         </motion.p>
