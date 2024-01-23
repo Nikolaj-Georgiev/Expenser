@@ -14,6 +14,7 @@
 .action {
   grid-column: 1 / 6;
   width: -webkit-fill-available;
+  cursor: pointer;
 }
 .redirect {
   grid-column: 1 / 5;
@@ -29,7 +30,7 @@
   max-width: 100%;
   display: grid;
   grid-template-rows: 1fr 1fr auto;
-  gap: 3.2rem;
+  gap: 2.4rem;
   padding: 0 3.2rem 3.2rem 3.2rem;
   margin: auto;
   margin-top: 1.6rem;

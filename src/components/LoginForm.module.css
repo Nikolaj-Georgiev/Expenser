@@ -9,6 +9,7 @@
 .action {
   grid-column: 1 / 6;
   width: -webkit-fill-available;
+  cursor: pointer;
 }
 .navigate {
   grid-column: 1 / 5;
