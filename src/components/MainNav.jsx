@@ -20,7 +20,7 @@ export default function MainNav() {
             spy={true}
             smooth={true}
             offset={-96}
-            duration={800}
+            duration={300}
             className={linkCssClass}
           >
             About
@@ -36,7 +36,7 @@ export default function MainNav() {
             spy={true}
             smooth={true}
             offset={-96}
-            duration={800}
+            duration={300}
             className={linkCssClass}
           >
             Testimonials

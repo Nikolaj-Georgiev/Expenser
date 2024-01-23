@@ -6,7 +6,10 @@ import classes from './Header.module.css';
 export default function Header({ children }) {
   return (
     <header className={`${classes.header} ${classes.sticky}`}>
-      <Link to='/'>
+      <Link
+        to='/'
+        onClick={() => document.body.scrollIntoView({ behavior: 'smooth' })}
+      >
         <img
           className={classes.logo}
           src={logoImg}
