@@ -2,6 +2,7 @@ import LoginForm from '../components/LoginForm';
 import logoImg from '../assets/logo-circle.png';
 import Modal from '../UI/Modal';
 import { login } from '../services/apiAuth.js';
+import { motion } from 'framer-motion';
 
 import {
   redirect,
@@ -29,6 +30,20 @@ function LoginPage() {
       logo={logoImg}
       alt='Image of a piggy bank'
     >
+      {data && data.status && (
+        <motion.p
+          style={{ y: -50 }}
+          animate={{
+            y: 0,
+            color: '#F7CD08',
+            fontSize: '1.8rem',
+            fontWeight: 500,
+            textTransform: 'uppercase',
+          }}
+        >
+          {data.message}
+        </motion.p>
+      )}
       <LoginForm
         onCancel={handleCancel}
         submitting={navigation.state === 'submitting'}
@@ -52,11 +67,10 @@ export async function action({ request }) {
     await login(user);
   } catch (err) {
     if (err.status === 422) {
-      throw err;
+      return err;
     }
 
     throw err;
   }
-
   return redirect('/dashboard');
 }
