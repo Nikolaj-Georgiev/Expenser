@@ -11,6 +11,8 @@
   gap: 2.4rem;
 }
 
+/* webkit-fill not works in firefox... */
+
 .action {
   grid-column: 1 / 6;
   /* width: -webkit-fill-available; */
