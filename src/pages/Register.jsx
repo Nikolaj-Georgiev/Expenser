@@ -28,10 +28,6 @@ export default function Register() {
     navigate('/login');
   }
 
-  function handleCancel() {
-    navigate('/');
-  }
-
   return (
     <Modal
       title='Register'
@@ -43,7 +39,6 @@ export default function Register() {
       )}
       <AuthForm
         onNav={handleLoginNavigate}
-        onCancel={handleCancel}
         initialMode='register'
         submitting={navigation.state === 'submitting'}
       />

@@ -28,10 +28,6 @@ function LoginPage() {
     navigate('/register');
   }
 
-  function handleCancel() {
-    navigate('/');
-  }
-
   return (
     <Modal
       title='Login'
@@ -42,7 +38,6 @@ function LoginPage() {
         <TextValidationMessage>{data.message}</TextValidationMessage>
       )}
       <AuthForm
-        onCancel={handleCancel}
         submitting={navigation.state === 'submitting'}
         initialMode='login'
         onNav={handleRegisterNavigate}

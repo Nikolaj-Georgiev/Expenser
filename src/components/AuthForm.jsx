@@ -1,12 +1,18 @@
 /* eslint-disable react/prop-types */
-import { Form } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import Button from '../UI/Button';
 import { MiniLoader } from '../UI/MiniLoader';
 import classes from './AuthForm.module.css';
 
-export default function AuthForm({ onCancel, submitting, onNav, initialMode }) {
+export default function AuthForm({ submitting, onNav, initialMode }) {
+  const navigate = useNavigate();
+
+  function handleCancel() {
+    navigate('/');
+  }
+
   const modeSelector = useSelector((state) => state.authForm);
   const mode = modeSelector.formMode ?? initialMode;
 
@@ -81,7 +87,7 @@ export default function AuthForm({ onCancel, submitting, onNav, initialMode }) {
         <Button
           type='button'
           isText={true}
-          onClick={onCancel}
+          onClick={handleCancel}
           disabled={submitting}
           moreCss={classes.cancel}
         >
