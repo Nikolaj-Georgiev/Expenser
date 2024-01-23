@@ -46,6 +46,7 @@ function LoginPage() {
             fontSize: '1.8rem',
             fontWeight: 500,
             textTransform: 'uppercase',
+            fontFamily: 'inherit',
           }}
           animate={{
             y: 0,
