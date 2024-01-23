@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import logoImg from '../assets/logo-circle.png';
 import Modal from '../UI/Modal';
 import { login } from '../services/apiAuth.js';
