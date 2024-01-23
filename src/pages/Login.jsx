@@ -3,8 +3,8 @@ import Modal from '../UI/Modal';
 import { login } from '../services/apiAuth.js';
 import AuthForm from '../components/AuthForm.jsx';
 import { loginActions } from '../store/auth-form-slice.js';
+import TextValidationMessage from '../UI/TextValidationMessage.jsx';
 
-import { motion } from 'framer-motion';
 import {
   redirect,
   useActionData,
@@ -39,23 +39,7 @@ function LoginPage() {
       alt='Image of a piggy bank'
     >
       {data && data.status && (
-        <motion.p
-          style={{
-            y: -100,
-            color: '#F7CD08',
-            fontSize: '1.8rem',
-            fontWeight: 500,
-            textTransform: 'uppercase',
-            fontFamily: 'inherit',
-          }}
-          animate={{
-            y: 0,
-            transition: { type: 'spring' },
-          }}
-          whileHover={{ scaleX: 1.3 }}
-        >
-          {data.message}
-        </motion.p>
+        <TextValidationMessage>{data.message}</TextValidationMessage>
       )}
       <AuthForm
         onCancel={handleCancel}

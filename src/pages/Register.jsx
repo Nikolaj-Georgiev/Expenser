@@ -10,8 +10,8 @@ import {
   useNavigate,
   useNavigation,
 } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
+import TextValidationMessage from '../UI/TextValidationMessage';
 
 export default function Register() {
   const data = useActionData();
@@ -39,23 +39,7 @@ export default function Register() {
       alt='Image of a piggy bank'
     >
       {data && data.status && (
-        <motion.p
-          style={{
-            y: -100,
-            color: '#F7CD08',
-            fontSize: '1.8rem',
-            fontWeight: 500,
-            textTransform: 'uppercase',
-            fontFamily: 'inherit',
-          }}
-          animate={{
-            y: 0,
-            transition: { type: 'spring' },
-          }}
-          whileHover={{ scaleX: 1.3 }}
-        >
-          {data.message}
-        </motion.p>
+        <TextValidationMessage>{data.message}</TextValidationMessage>
       )}
       <AuthForm
         onNav={handleLoginNavigate}
