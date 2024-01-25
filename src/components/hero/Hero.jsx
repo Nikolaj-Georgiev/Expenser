@@ -1,8 +1,8 @@
 import classes from './Hero.module.css';
-import smallPigImage from '../assets/logo-trans.png';
-import bigPigImage from '../assets/logo-trans-bigger.png';
+import smallPigImage from '../../assets/logo-trans.png';
+import bigPigImage from '../../assets/logo-trans-bigger.png';
 
-import { HERO_BULLETS } from '../util/config';
+import { HERO_BULLETS } from '../../util/config';
 
 export default function Hero() {
   return (

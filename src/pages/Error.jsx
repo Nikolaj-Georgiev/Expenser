@@ -2,9 +2,9 @@
 import { useRouteError } from 'react-router-dom';
 import brokenPigImg from '../assets/brokenPig3.webp';
 
-import ErrorPageContent from '../components/ErrorPageContent.jsx';
-import MainNav from '../components/MainNav.jsx';
-import Header from '../components/Header.jsx';
+import ErrorPageContent from '../components/error/ErrorPageContent.jsx';
+import MainNav from '../components/main-nav/MainNav.jsx';
+import Header from '../components/header/Header.jsx';
 
 export default function ErrorPage() {
   const error = useRouteError();

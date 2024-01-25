@@ -2,7 +2,7 @@
 import Modal from '../UI/Modal';
 import logoImg from '../assets/logo-circle.png';
 import { signUp } from '../services/apiAuth';
-import AuthForm from '../components/AuthForm';
+import AuthForm from '../components/auth-form/AuthForm';
 import { loginActions } from '../store/auth-form-slice';
 
 import {

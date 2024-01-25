@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logoImg from '../assets/logo-trans.png';
+import logoImg from '../../assets/logo-trans.png';
 import classes from './Header.module.css';
 
 // eslint-disable-next-line react/prop-types

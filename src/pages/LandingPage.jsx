@@ -1,5 +1,5 @@
 // import Anchor from '../components/Anchor.jsx';
-import Hero from '../components/Hero.jsx';
+import Hero from '../components/hero/Hero.jsx';
 import About from './About.jsx';
 import Testimonials from './Testimonials.jsx';
 

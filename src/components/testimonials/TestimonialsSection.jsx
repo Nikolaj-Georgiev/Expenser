@@ -1,7 +1,7 @@
 import classes from './TestimonialsSection.module.css';
-import chartSmall from '../assets/customers/testimonials-chart-small.webp';
-import chartBig from '../assets/customers/testimonials-chart-big.jpg';
-import { CUSTOMERS } from '../util/config.js';
+import chartSmall from '../../assets/customers/testimonials-chart-small.webp';
+import chartBig from '../../assets/customers/testimonials-chart-big.jpg';
+import { CUSTOMERS } from '../../util/config.js';
 import Testimonial from './Testimonial.jsx';
 
 export default function TestimonialsPage() {

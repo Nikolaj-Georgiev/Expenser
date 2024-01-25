@@ -2,7 +2,7 @@
 import logoImg from '../assets/logo-circle.png';
 import Modal from '../UI/Modal';
 import { login } from '../services/apiAuth.js';
-import AuthForm from '../components/AuthForm.jsx';
+import AuthForm from '../components/auth-form/AuthForm.jsx';
 import { loginActions } from '../store/auth-form-slice.js';
 import TextValidationMessage from '../UI/TextValidationMessage.jsx';
 

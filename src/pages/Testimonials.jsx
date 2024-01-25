@@ -1,4 +1,4 @@
-import TestimonialsPage from '../components/TestimonialsSection.jsx';
+import TestimonialsPage from '../components/testimonials/TestimonialsSection.jsx';
 
 export default function Testimonials() {
   return <TestimonialsPage />;

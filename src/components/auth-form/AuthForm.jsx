@@ -2,8 +2,8 @@
 import { Form, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import Button from '../UI/Button';
-import { MiniLoader } from '../UI/MiniLoader';
+import Button from '../../UI/Button';
+import { MiniLoader } from '../../UI/MiniLoader';
 import classes from './AuthForm.module.css';
 
 export default function AuthForm({ submitting, onNav, initialMode }) {
