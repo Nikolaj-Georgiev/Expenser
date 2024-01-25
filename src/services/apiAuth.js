@@ -13,8 +13,10 @@ export async function login({ email, password }) {
   });
 
   if (error) {
-    throw new Error(error);
+    throw ({ error_description: error.message, status: error.status });
   }
+
+  return data;
 }
 
 export async function signUp({ email, password, rePass }) {
@@ -28,6 +30,8 @@ export async function signUp({ email, password, rePass }) {
   });
 
   if (error) {
-    throw new Error(error.message);
+    throw ({ error_description: error.message, status: error.status, });
   }
+
+  return data;
 }

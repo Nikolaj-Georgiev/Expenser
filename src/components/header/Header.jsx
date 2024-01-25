@@ -7,7 +7,7 @@ export default function Header({ children }) {
   return (
     <header className={`${classes.header} ${classes.sticky}`}>
       <Link
-        to='/'
+        to=''
         onClick={() => document.body.scrollIntoView({ behavior: 'smooth' })}
       >
         <img

@@ -3,7 +3,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
 
-import { loginActions } from '../../store/auth-form-slice';
+import { loginActions } from '../../store/auth-slice';
 import classes from './MainNav.module.css';
 
 export default function MainNav() {

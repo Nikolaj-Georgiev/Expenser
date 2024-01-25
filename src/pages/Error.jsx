@@ -13,18 +13,19 @@ export default function ErrorPage() {
   let title = 'An error has occured!';
   let message = 'Something went wrong';
 
-  if (error.status === 500) {
-    message = error.message;
-  }
-
   if (error.status === 404) {
     title = 'Page not found!';
     message = 'Could not find resource or page.';
   }
 
-  if (error.status === 422) {
+  if (error.error_description === 'Invalid login credentials') {
     title = 'Unable to login';
-    message = error.message;
+    message = error.error_description;
+  }
+
+  if (error.error_description === 'User already registered') {
+    title = 'Unable to register';
+    message = error.error_description;
   }
 
   return (

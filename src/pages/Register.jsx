@@ -3,7 +3,7 @@ import Modal from '../UI/Modal';
 import logoImg from '../assets/logo-circle.png';
 import { signUp } from '../services/apiAuth';
 import AuthForm from '../components/auth-form/AuthForm';
-import { loginActions } from '../store/auth-form-slice';
+import { loginActions } from '../store/auth-slice';
 
 import {
   redirect,
@@ -14,7 +14,7 @@ import {
 import { useDispatch } from 'react-redux';
 import TextValidationMessage from '../UI/TextValidationMessage';
 
-export default function Register() {
+export default function RegisterPage() {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();

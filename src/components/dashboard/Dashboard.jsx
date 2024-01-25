@@ -1,4 +1,4 @@
-import classes from './DashboardPage.module.css';
+import classes from './Dashboard.module.css';
 
 export default function DashboardPage() {
   return (
