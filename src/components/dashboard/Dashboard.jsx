@@ -1,6 +1,6 @@
 import classes from './Dashboard.module.css';
 
-export default function DashboardPage() {
+export default function Dashboard() {
   return (
     <>
       <h1 className={classes.heading}>Dashboard</h1>

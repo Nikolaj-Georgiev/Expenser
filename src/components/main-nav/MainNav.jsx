@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import { Link, NavLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
@@ -6,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { loginActions } from '../../store/auth-slice';
 import classes from './MainNav.module.css';
 
-export default function MainNav() {
+export default function MainNav({ token }) {
   const linkCssClass = `${classes['main-nav-link']} ${classes['nav-base']}`;
   const active = `${linkCssClass} ${classes.active}`;
   const buttonsCssClass = `${classes['main-nav-link']} ${classes['nav-cta']}`;
@@ -19,65 +21,116 @@ export default function MainNav() {
 
   return (
     <nav className={classes['main-nav']}>
-      <ul className={classes['main-nav-list']}>
-        <motion.li
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.85 }}
-        >
-          <ScrollLink
-            activeClass={active}
-            to='about'
-            spy={true}
-            smooth={true}
-            offset={-96}
-            duration={300}
-            className={linkCssClass}
+      {!token && (
+        <ul className={classes['main-nav-list']}>
+          <motion.li
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.85 }}
           >
-            About
-          </ScrollLink>
-        </motion.li>
-        <motion.li
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.85 }}
-        >
-          <ScrollLink
-            activeClass={active}
-            to='testimonials'
-            spy={true}
-            smooth={true}
-            offset={-96}
-            duration={300}
-            className={linkCssClass}
+            <ScrollLink
+              activeClass={active}
+              to='about'
+              spy={true}
+              smooth={true}
+              offset={-96}
+              duration={300}
+              className={linkCssClass}
+            >
+              About
+            </ScrollLink>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.85 }}
           >
-            Testimonials
-          </ScrollLink>
-        </motion.li>
-        <motion.li
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.85 }}
-        >
-          <Link
-            className={buttonsCssClass}
-            to='login'
-            onClick={() => toggleAuthFormHandler('login')}
+            <ScrollLink
+              activeClass={active}
+              to='testimonials'
+              spy={true}
+              smooth={true}
+              offset={-96}
+              duration={300}
+              className={linkCssClass}
+            >
+              Testimonials
+            </ScrollLink>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.85 }}
           >
-            Login
-          </Link>
-        </motion.li>
+            <Link
+              className={buttonsCssClass}
+              to='login'
+              onClick={() => toggleAuthFormHandler('login')}
+            >
+              Login
+            </Link>
+          </motion.li>
 
-        <motion.li
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.85 }}
-        >
-          <Link
-            className={buttonsCssClass}
-            to='register'
-            onClick={() => toggleAuthFormHandler('register')}
+          <motion.li
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.85 }}
           >
-            Register
-          </Link>
-        </motion.li>
-      </ul>
+            <Link
+              className={buttonsCssClass}
+              to='register'
+              onClick={() => toggleAuthFormHandler('register')}
+            >
+              Register
+            </Link>
+          </motion.li>
+        </ul>
+      )}
+      {token && (
+        <ul className={classes['main-nav-list']}>
+          <motion.li
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.85 }}
+          >
+            <NavLink
+              className={(isActive) => (isActive ? active : linkCssClass)}
+              to='/dashboard'
+            >
+              Dashboard
+            </NavLink>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.85 }}
+          >
+            <Link
+              className={buttonsCssClass}
+              to='new-expense'
+            >
+              New Expense
+            </Link>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.85 }}
+          >
+            <Link
+              className={buttonsCssClass}
+              to='register'
+              onClick={() => toggleAuthFormHandler('register')}
+            >
+              New Saving
+            </Link>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.85 }}
+          >
+            <Link
+              className={buttonsCssClass}
+              to='/logout'
+            >
+              Logout
+            </Link>
+          </motion.li>
+        </ul>
+      )}
     </nav>
   );
 }
