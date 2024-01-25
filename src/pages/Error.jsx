@@ -5,6 +5,7 @@ import brokenPigImg from '../assets/brokenPig3.webp';
 import ErrorPageContent from '../components/error/ErrorPageContent.jsx';
 import MainNav from '../components/main-nav/MainNav.jsx';
 import Header from '../components/header/Header.jsx';
+import Footer from '../components/footer/Footer.jsx';
 
 export default function ErrorPage() {
   const error = useRouteError();
@@ -14,8 +15,8 @@ export default function ErrorPage() {
   let message = 'Something went wrong';
 
   if (error.status === 404) {
-    title = 'Page not found!';
-    message = 'Could not find resource or page.';
+    title = 'Page you are trying to reach does not exist';
+    message = '404';
   }
 
   if (error.error_description === 'Invalid login credentials') {
@@ -41,6 +42,7 @@ export default function ErrorPage() {
       >
         {message}
       </ErrorPageContent>
+      <Footer />
     </>
   );
 }

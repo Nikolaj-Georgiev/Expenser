@@ -1,5 +1,6 @@
 .content {
   max-width: 100vw;
+  max-height: 80vh;
   background-color: #ecf9f2;
   padding: 4.8rem 0 9.6rem 0;
   margin: 0 auto;
@@ -26,5 +27,7 @@
 }
 
 .content p {
-  font-size: 2.4rem;
+  padding-top: 3.2rem;
+  font-size: 3.2rem;
+  font-weight: 500;
 }
