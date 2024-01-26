@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const loginSlice = createSlice({
   name: 'authForm',
-  initialState: { formMode: 'login', token: '' },
+  initialState: { formMode: 'login', token: '', logoRout: '/' },
   reducers: {
     toggle(state, actions) {
       const newFormMode = actions.payload;
@@ -11,6 +11,9 @@ const loginSlice = createSlice({
     },
     tokenFn(state, actions) {
       state.token = actions.payload || '';
+    },
+    logoRoutFn(state, actions) {
+      state.logoRout = actions.payload || '/';
     }
   }
 });

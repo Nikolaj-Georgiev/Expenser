@@ -130,7 +130,7 @@ export default function MainNav() {
               action='/logout'
               method='post'
             >
-              <button>logout</button>
+              <Button isCta={true}>Logout</Button>
             </Form>
           </motion.li>
         </ul>
