@@ -14,6 +14,9 @@ const loginSlice = createSlice({
     },
     logoRoutFn(state, actions) {
       state.logoRout = actions.payload || '/';
+    },
+    logout(state) {
+      state.token = '';
     }
   }
 });

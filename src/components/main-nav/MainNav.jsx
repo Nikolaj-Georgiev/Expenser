@@ -126,12 +126,18 @@ export default function MainNav() {
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.85 }}
           >
-            <Form
+            {/* <Form
               action='/logout'
               method='post'
             >
               <Button isCta={true}>Logout</Button>
-            </Form>
+            </Form> */}
+            <Link
+              className={buttonsCssClass}
+              to='/logout'
+            >
+              Logout
+            </Link>
           </motion.li>
         </ul>
       )}

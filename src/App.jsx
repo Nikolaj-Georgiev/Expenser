@@ -8,7 +8,7 @@ import RegisterPage, { action as registerAction } from './pages/Register.jsx';
 import DashboardLayout from './pages/DashboardRouts.jsx';
 import Dashboard from './components/dashboard/Dashboard.jsx';
 import { tokenLoader } from './util/auth.js';
-import { action as logoutAction } from './pages/Logout.jsx';
+import Logout from './pages/Logout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,7 +43,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'logout',
-        action: logoutAction,
+        element: <Logout />,
+        // action: logoutAction,
       },
     ],
   },
