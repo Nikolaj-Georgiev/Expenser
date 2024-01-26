@@ -76,6 +76,10 @@ Medium: 11px;
   scrollbar-width: thin;
 }
 
+*:focus {
+  outline: none;
+}
+
 html {
   /* font-size: 10px; */
   /* 10px / 16px = 0.625 = 62.5% */

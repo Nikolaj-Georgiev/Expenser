@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 
 import classes from './Hero.module.css';
-import smallPigImage from '../../assets/logo-trans.png';
-import bigPigImage from '../../assets/logo-trans-bigger.png';
+// import smallPigImage from '../../assets/logo-trans.png';
+import smallPigImage from '../../assets/logo-trans-webp.webp';
+// import bigPigImage from '../../assets/logo-trans-bigger.png';
 import { HERO_BULLETS } from '../../util/config';
 
 export default function Hero() {
@@ -66,7 +67,7 @@ export default function Hero() {
           </div>
 
           <div className={classes['hero-img-box']}>
-            <picture>
+            {/* <picture>
               <source
                 srcSet={smallPigImage}
                 type='image/png'
@@ -74,14 +75,14 @@ export default function Hero() {
               <source
                 srcSet={bigPigImage}
                 type='image/png'
-              />
+              /> */}
 
-              <img
-                src={bigPigImage}
-                alt='Gold coin entering a piggy bank'
-                className={classes['hero-img']}
-              />
-            </picture>
+            <img
+              src={smallPigImage}
+              alt='Gold coin entering a piggy bank'
+              className={classes['hero-img']}
+            />
+            {/* </picture> */}
           </div>
         </div>
       </section>

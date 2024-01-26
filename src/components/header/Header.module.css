@@ -27,17 +27,17 @@
 }
 
 .logo {
-  height: 6.2rem;
+  height: 16rem;
   /* width: 7.4rem; */
   padding: 0.4rem;
-  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.15);
-  border: 1px solid rgb(247, 203, 8);
-  border-radius: 50%;
-  background-image: linear-gradient(
+  /* box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.15);
+  border: 1px solid rgb(247, 203, 8); */
+  border-radius: 35%;
+  /* background-image: linear-gradient(
     to bottom,
     rgb(65, 195, 126),
     rgb(247, 203, 8)
-  );
+  ); */
 }
 
 .logo:hover {

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 import classes from './Header.module.css';
 import logoImg from '../../assets/logo-trans.png';
@@ -30,7 +31,7 @@ export default function Header({ children }) {
         to={logoRout}
         onClick={() => document.body.scrollIntoView({ behavior: 'smooth' })}
       >
-        <img
+        <motion.img
           className={classes.logo}
           src={logoImg}
           alt='Image of a piggy bank'

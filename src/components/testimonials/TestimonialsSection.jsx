@@ -1,6 +1,5 @@
 import classes from './TestimonialsSection.module.css';
 import chartSmall from '../../assets/customers/testimonials-chart-small.webp';
-import chartBig from '../../assets/customers/testimonials-chart-big.jpg';
 import { CUSTOMERS } from '../../util/config.js';
 import Testimonial from './Testimonial.jsx';
 
@@ -17,7 +16,7 @@ export default function TestimonialsPage() {
           </h2>
           <div className={classes.container}>
             <div className={classes.img}>
-              <picture>
+              {/* <picture>
                 <source
                   srcSet={chartSmall}
                   type='image/webp'
@@ -25,14 +24,14 @@ export default function TestimonialsPage() {
                 <source
                   srcSet={chartBig}
                   type='image/jpg'
-                />
+                /> */}
 
-                <img
-                  src={chartBig}
-                  alt='Chart report of a budget'
-                  className={classes.img}
-                />
-              </picture>
+              <img
+                src={chartSmall}
+                alt='Chart report of a budget'
+                className={classes.img}
+              />
+              {/* </picture> */}
             </div>
 
             <div>

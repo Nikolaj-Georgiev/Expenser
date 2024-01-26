@@ -17,7 +17,7 @@
   column-gap: 7.2rem;
 }
 .img {
-  max-width: 50rem;
+  max-width: 40rem;
   margin: auto;
   border-radius: 1.6rem;
   box-shadow: 0 0.2rem 0.8rem rgba(66, 196, 127, 0.267);
@@ -25,7 +25,7 @@
 
 .section-container {
   max-width: 120rem;
-  padding: 0 3.2rem;
+  padding: 0 1.2rem 0 0.4;
   margin: 0 auto;
 }
 
