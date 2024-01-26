@@ -1,26 +1,27 @@
-import classes from './Footer.module.css';
 import { motion } from 'framer-motion';
+
+import classes from './Footer.module.css';
 
 export default function Footer() {
   return (
     <footer className={classes.container}>
       <p className={classes.copyright}>
-        Copyright &copy; 2024 by NGNikolay. All tights reserved!
+        Created and designed by NGNikolay. Copyright &copy; 2024. All tights
+        reserved!
       </p>
       <div className={classes.box}>
-        <p className={classes.contacts}>created and designed by</p>
         <motion.span
           whileHover={{ scale: 2, transition: { duration: 0.5 } }}
           className={classes.heading}
         >
-          NGNikolay
+          EXPENSER
         </motion.span>
       </div>
       <div className={classes.box}>
         <p className={classes.contacts}>Contact me</p>
         <ul className={classes.links}>
           <motion.li
-            whileHover={{ scale: 2 }}
+            whileHover={{ scale: 1.5 }}
             whileTap={{ scale: 0.85 }}
           >
             <a
@@ -32,11 +33,12 @@ export default function Footer() {
               <ion-icon
                 class='social-icon'
                 name='logo-facebook'
+                size='large'
               ></ion-icon>
             </a>
           </motion.li>
           <motion.li
-            whileHover={{ scale: 2 }}
+            whileHover={{ scale: 1.5 }}
             whileTap={{ scale: 0.85 }}
           >
             <a
@@ -48,11 +50,12 @@ export default function Footer() {
               <ion-icon
                 class='social-icon'
                 name='logo-github'
+                size='large'
               ></ion-icon>
             </a>
           </motion.li>
           <motion.li
-            whileHover={{ scale: 2 }}
+            whileHover={{ scale: 1.5 }}
             whileTap={{ scale: 0.85 }}
           >
             <a
@@ -64,6 +67,7 @@ export default function Footer() {
               <ion-icon
                 class='social-icon'
                 name='logo-linkedin'
+                size='large'
               ></ion-icon>
             </a>
           </motion.li>

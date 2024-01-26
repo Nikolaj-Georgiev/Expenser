@@ -1,3 +1,7 @@
+.dashboard {
+  max-height: calc(100vh - 9.6rem - 99.6rem);
+}
+
 .heading {
   font-family: inherit;
   font-size: 4.8rem;
@@ -6,7 +10,7 @@
 }
 
 .list {
-  padding: 25rem;
+  padding: 27rem;
   font-family: inherit;
   font-size: large;
   font-weight: 500;

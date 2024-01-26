@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { Form, Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { loginActions } from '../../store/auth-slice';
 import classes from './MainNav.module.css';
-import Button from '../../UI/Button';
 
 export default function MainNav() {
   const linkCssClass = `${classes['main-nav-link']} ${classes['nav-base']}`;
@@ -15,7 +14,6 @@ export default function MainNav() {
   const buttonsCssClass = `${classes['main-nav-link']} ${classes['nav-cta']}`;
 
   const token = useSelector((state) => state.authForm.token);
-  console.log(token);
 
   const dispatch = useDispatch();
 
@@ -92,12 +90,12 @@ export default function MainNav() {
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.85 }}
           >
-            <NavLink
-              className={(isActive) => (isActive ? active : linkCssClass)}
+            <Link
+              className={linkCssClass}
               to='/dashboard'
             >
               Dashboard
-            </NavLink>
+            </Link>
           </motion.li>
           <motion.li
             whileHover={{ scale: 1.08 }}
@@ -116,8 +114,7 @@ export default function MainNav() {
           >
             <Link
               className={buttonsCssClass}
-              to='register'
-              onClick={() => toggleAuthFormHandler('register')}
+              to='new-saving'
             >
               New Saving
             </Link>

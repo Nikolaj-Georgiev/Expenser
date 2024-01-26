@@ -1,11 +1,4 @@
 /* eslint-disable react-refresh/only-export-components */
-import logoImg from '../assets/logo-circle.png';
-import Modal from '../UI/Modal';
-import { login } from '../services/apiAuth.js';
-import AuthForm from '../components/auth-form/AuthForm.jsx';
-import { loginActions } from '../store/auth-slice.js';
-import TextValidationMessage from '../UI/TextValidationMessage.jsx';
-
 import {
   redirect,
   useActionData,
@@ -13,6 +6,13 @@ import {
   useNavigation,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+
+import logoImg from '../assets/logo-circle.png';
+import Modal from '../UI/Modal';
+import { login } from '../services/apiAuth.js';
+import AuthForm from '../components/auth-form/AuthForm.jsx';
+import { loginActions } from '../store/auth-slice.js';
+import TextValidationMessage from '../UI/TextValidationMessage.jsx';
 
 function LoginPage() {
   const data = useActionData();

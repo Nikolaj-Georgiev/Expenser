@@ -1,11 +1,11 @@
 import { useSubmit, useLoaderData } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useCallback } from 'react';
 
 import { getTokenDuration } from '../util/auth';
 import Dashboard from '../components/dashboard/Dashboard';
 import { loginActions } from '../store/auth-slice';
-import { useCallback } from 'react';
 
 export default function DashboardLayout() {
   const token = useLoaderData();
@@ -31,7 +31,6 @@ export default function DashboardLayout() {
     }
 
     const tokenDuration = getTokenDuration();
-    console.log(tokenDuration);
 
     const timer = setTimeout(() => {
       submit(null, { action: '/logout', method: 'post' });

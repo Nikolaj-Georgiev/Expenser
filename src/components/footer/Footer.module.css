@@ -5,7 +5,8 @@
   padding: 0 4.8rem;
   position: relative;
   display: grid;
-  grid-template-columns: 1.5fr 4fr 1.5fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 9.6rem;
   align-items: center;
   justify-items: center;
   background-color: #42c47e;
@@ -23,22 +24,19 @@
   margin-bottom: 1.6rem;
 }
 
-.icon {
-  width: 3.2rem;
-  height: 3.2rem;
-}
-
 .copyright {
   font-size: 1.4rem;
   line-height: 1.6;
   color: #6f6f6f;
   margin: auto;
+  display: block;
+  max-width: 24rem;
+  max-height: 5.2rem;
 }
 
 .heading {
   font-size: 2.4rem;
   font-weight: 600;
-  margin-bottom: 1.6rem;
 }
 
 .contacts {

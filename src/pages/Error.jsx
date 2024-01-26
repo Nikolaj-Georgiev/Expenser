@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useRouteError } from 'react-router-dom';
-import brokenPigImg from '../assets/brokenPig3.webp';
 
+import brokenPigImg from '../assets/brokenPig3.webp';
 import ErrorPageContent from '../components/error/ErrorPageContent.jsx';
 import MainNav from '../components/main-nav/MainNav.jsx';
 import Header from '../components/header/Header.jsx';
