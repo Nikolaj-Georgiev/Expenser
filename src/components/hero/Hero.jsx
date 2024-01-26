@@ -1,10 +1,27 @@
+import { motion } from 'framer-motion';
+
 import classes from './Hero.module.css';
 import smallPigImage from '../../assets/logo-trans.png';
 import bigPigImage from '../../assets/logo-trans-bigger.png';
-
 import { HERO_BULLETS } from '../../util/config';
 
 export default function Hero() {
+  const list = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.3,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+      },
+    },
+  };
+
   return (
     <>
       <section
@@ -21,9 +38,16 @@ export default function Hero() {
               </h1>
             </div>
             <div>
-              <ul className={classes['hero-features-list']}>
+              <motion.ul
+                initial='hidden'
+                animate='visible'
+                variants={list}
+                className={classes['hero-features-list']}
+              >
                 {HERO_BULLETS.map((bullet) => (
-                  <li
+                  <motion.li
+                    variants={list}
+                    whileHover={{ scale: 1.1 }}
                     key={bullet.id}
                     className={classes['hero-feature-item']}
                   >
@@ -35,9 +59,9 @@ export default function Hero() {
                     <p className={classes['hero-feature-text']}>
                       {bullet.bulletText}
                     </p>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
           </div>
 

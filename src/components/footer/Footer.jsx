@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className={classes.container}>
       <p className={classes.copyright}>
-        Created and designed by NGNikolay. Copyright &copy; 2024. All tights
-        reserved!
+        Created and designed by <span>NGNikolay</span>. Copyright &copy; 2024.
+        All tights reserved!
       </p>
       <div className={classes.box}>
         <motion.span
