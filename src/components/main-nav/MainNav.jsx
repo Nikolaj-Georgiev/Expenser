@@ -1,17 +1,21 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { Link, NavLink } from 'react-router-dom';
+import { Form, Link, NavLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { motion } from 'framer-motion';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { loginActions } from '../../store/auth-slice';
 import classes from './MainNav.module.css';
+import Button from '../../UI/Button';
 
-export default function MainNav({ token }) {
+export default function MainNav() {
   const linkCssClass = `${classes['main-nav-link']} ${classes['nav-base']}`;
   const active = `${linkCssClass} ${classes.active}`;
   const buttonsCssClass = `${classes['main-nav-link']} ${classes['nav-cta']}`;
+
+  const token = useSelector((state) => state.authForm.token);
+  console.log(token);
 
   const dispatch = useDispatch();
 
@@ -122,12 +126,12 @@ export default function MainNav({ token }) {
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.85 }}
           >
-            <Link
-              className={buttonsCssClass}
-              to='/logout'
+            <Form
+              action='/logout'
+              method='post'
             >
-              Logout
-            </Link>
+              <button>logout</button>
+            </Form>
           </motion.li>
         </ul>
       )}

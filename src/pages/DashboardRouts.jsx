@@ -1,16 +1,26 @@
-import { useSubmit, useLoaderData, Outlet } from 'react-router-dom';
+import { useSubmit, useLoaderData } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-import classes from './DashboardRouts.module.css';
-import Header from '../components/header/Header';
-import MainNav from '../components/main-nav/MainNav';
 import { getTokenDuration } from '../util/auth';
+import Dashboard from '../components/dashboard/Dashboard';
+import { loginActions } from '../store/auth-slice';
+import { useCallback } from 'react';
 
 export default function DashboardLayout() {
   const token = useLoaderData();
   const submit = useSubmit();
+  const dispatch = useDispatch();
+
+  const setToken = useCallback(
+    (token) => {
+      dispatch(loginActions.tokenFn(token));
+    },
+    [dispatch]
+  );
 
   useEffect(() => {
+    setToken(token);
     if (!token) {
       return;
     }
@@ -28,18 +38,11 @@ export default function DashboardLayout() {
     }, tokenDuration);
 
     return () => clearTimeout(timer);
-  }, [token, submit]);
+  }, [token, submit, setToken]);
 
   return (
     <>
-      <div className={classes.pancake}>
-        <Header>
-          <MainNav token={token} />
-        </Header>
-        <main className={classes.main}>
-          <Outlet />
-        </main>
-      </div>
+      <Dashboard />
     </>
   );
 }

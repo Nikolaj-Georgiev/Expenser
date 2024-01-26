@@ -39,11 +39,11 @@ const router = createBrowserRouter([
             index: true,
             element: <Dashboard />,
           },
-          {
-            path: 'logout',
-            action: logoutAction,
-          },
         ],
+      },
+      {
+        path: 'logout',
+        action: logoutAction,
       },
     ],
   },

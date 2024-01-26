@@ -1,4 +1,4 @@
-import { redirect } from "react-router-dom";
+import { redirect } from 'react-router-dom';
 
 export function setAuthToken(data) {
   localStorage.setItem('token', data);
@@ -38,7 +38,8 @@ export function tokenLoader() {
 
 export function tokenRemover() {
   localStorage.removeItem('token');
-  localStorage.removeItem('expiration')
+  localStorage.removeItem('expiration');
+  localStorage.removeItem('sb-qbobtqltrfhexlhwbjig-auth-token');
 }
 
 export function checkAuthLoader() {
