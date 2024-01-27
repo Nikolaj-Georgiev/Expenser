@@ -1,11 +1,10 @@
-// import Anchor from '../components/Anchor.jsx';
+import { Element } from 'react-scroll';
+
 import Hero from '../components/hero/Hero.jsx';
 import About from './About.jsx';
 import Testimonials from './Testimonials.jsx';
 
-import { Element } from 'react-scroll';
-
-export default function LandingPage() {
+export default function HomePage() {
   return (
     <>
       <Element name='hero'>

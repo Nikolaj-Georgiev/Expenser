@@ -33,7 +33,7 @@ export default function AuthForm({ submitting, onNav, initialMode }) {
           type='email'
           name='email'
           required
-          autoComplete='email'
+          autoComplete='username'
           placeholder='example@example.com'
           className={classes.input}
         />
@@ -45,7 +45,7 @@ export default function AuthForm({ submitting, onNav, initialMode }) {
           type='password'
           name='password'
           required
-          autoComplete='password'
+          autoComplete='current-password'
           placeholder='your password &#129058; minimum 6 chars'
           minLength={6}
           className={classes.input}

@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import supabase from "./supabase";
+import { setAuthToken } from '../util/auth';
+import supabase from './supabase';
 
 const emailRegex = /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$/;
 
@@ -13,8 +14,11 @@ export async function login({ email, password }) {
   });
 
   if (error) {
-    throw new Error(error);
+    throw ({ error_description: error.message, status: error.status });
   }
+  setAuthToken(data.session.access_token);
+
+  return data;
 }
 
 export async function signUp({ email, password, rePass }) {
@@ -28,6 +32,9 @@ export async function signUp({ email, password, rePass }) {
   });
 
   if (error) {
-    throw new Error(error.message);
+    throw ({ error_description: error.message, status: error.status, });
   }
+  setAuthToken(data.session.access_token);
+
+  return data;
 }

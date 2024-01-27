@@ -1,15 +1,15 @@
-import classes from './DashboardPage.module.css';
+import classes from './Dashboard.module.css';
 
-export default function DashboardPage() {
+export default function Dashboard() {
   return (
-    <>
-      <h1 className={classes.heading}>Dashboard</h1>
+    <section>
+      <h2 className={classes.heading}>Dashboard</h2>
       <ul className={classes.list}>
         <li>Neshto 1</li>
         <li>Neshto 2</li>
         <li>Neshto 3</li>
         <li>Neshto 4</li>
       </ul>
-    </>
+    </section>
   );
 }

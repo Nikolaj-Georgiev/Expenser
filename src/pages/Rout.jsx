@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
+import { Outlet } from 'react-router-dom';
+
 import Header from '../components/header/Header.jsx';
 import MainNav from '../components/main-nav/MainNav.jsx';
 import Footer from '../components/footer/Footer.jsx';
-
-import { Outlet } from 'react-router-dom';
-
 import classes from './Rout.module.css';
 
 export default function RouterLayout() {

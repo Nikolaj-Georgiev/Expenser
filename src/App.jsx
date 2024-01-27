@@ -1,14 +1,14 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import RouterLayout from './pages/Rout.jsx';
-import Register from './pages/Register.jsx';
 import ErrorPage from './pages/Error.jsx';
-import LandingPage from './pages/LandingPage.jsx';
-import Dashboard from './pages/Dashboard.jsx';
-import { action as loginAction } from './pages/Login.jsx';
-import { action as registerAction } from './pages/Register.jsx';
-
-import LoginPage from './pages/Login.jsx';
+import HomePage from './pages/HomePage.jsx';
+import LoginPage, { action as loginAction } from './pages/Login.jsx';
+import RegisterPage, { action as registerAction } from './pages/Register.jsx';
+import DashboardLayout from './pages/DashboardRouts.jsx';
+import Dashboard from './components/dashboard/Dashboard.jsx';
+import { tokenLoader } from './util/auth.js';
+import Logout from './pages/Logout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <LandingPage />,
+        element: <HomePage />,
       },
       {
         path: 'login',
@@ -27,10 +27,25 @@ const router = createBrowserRouter([
       },
       {
         path: 'register',
-        element: <Register />,
+        element: <RegisterPage />,
         action: registerAction,
       },
-      { path: 'dashboard', element: <Dashboard /> },
+      {
+        path: 'dashboard',
+        element: <DashboardLayout />,
+        loader: tokenLoader,
+        children: [
+          {
+            index: true,
+            element: <Dashboard />,
+          },
+        ],
+      },
+      {
+        path: 'logout',
+        element: <Logout />,
+        // action: logoutAction,
+      },
     ],
   },
 ]);

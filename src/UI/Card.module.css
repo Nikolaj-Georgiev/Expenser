@@ -6,7 +6,7 @@
   perspective: 100rem; /* Provides a 3D effect */
   transform-style: preserve-3d;
   position: relative;
-  transition: transform 0.8s;
+  transition: transform 0.4s;
   /* box-shadow: 0 0.2rem 1.2rem rgba(66, 196, 127, 0.075); */
   box-shadow: 0 0.4rem 1.6rem rgba(247, 205, 8, 0.35);
   border-radius: 1rem;
@@ -40,10 +40,10 @@
 }
 
 .card:hover {
-  transform: translateY(-0.8rem);
+  transform: translateY(-1rem);
   /* transform: rotateY(180deg); */
   cursor: pointer;
-  box-shadow: 0 0.8rem 2rem rgba(247, 205, 8, 0.35);
+  box-shadow: 0 1.2rem 3rem rgba(247, 205, 8, 0.35);
 }
 
 .front,

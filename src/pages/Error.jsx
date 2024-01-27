@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { useRouteError } from 'react-router-dom';
-import brokenPigImg from '../assets/brokenPig3.webp';
 
+import brokenPigImg from '../assets/brokenPig3.webp';
 import ErrorPageContent from '../components/error/ErrorPageContent.jsx';
 import MainNav from '../components/main-nav/MainNav.jsx';
 import Header from '../components/header/Header.jsx';
+import Footer from '../components/footer/Footer.jsx';
 
 export default function ErrorPage() {
   const error = useRouteError();
@@ -13,18 +14,19 @@ export default function ErrorPage() {
   let title = 'An error has occured!';
   let message = 'Something went wrong';
 
-  if (error.status === 500) {
-    message = error.message;
-  }
-
   if (error.status === 404) {
-    title = 'Page not found!';
-    message = 'Could not find resource or page.';
+    title = 'Page you are trying to reach does not exist';
+    message = '404';
   }
 
-  if (error.status === 422) {
+  if (error.error_description === 'Invalid login credentials') {
     title = 'Unable to login';
-    message = error.message;
+    message = error.error_description;
+  }
+
+  if (error.error_description === 'User already registered') {
+    title = 'Unable to register';
+    message = error.error_description;
   }
 
   return (
@@ -40,6 +42,7 @@ export default function ErrorPage() {
       >
         {message}
       </ErrorPageContent>
+      <Footer />
     </>
   );
 }

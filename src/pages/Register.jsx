@@ -1,10 +1,4 @@
 /* eslint-disable react-refresh/only-export-components */
-import Modal from '../UI/Modal';
-import logoImg from '../assets/logo-circle.png';
-import { signUp } from '../services/apiAuth';
-import AuthForm from '../components/auth-form/AuthForm';
-import { loginActions } from '../store/auth-form-slice';
-
 import {
   redirect,
   useActionData,
@@ -12,9 +6,15 @@ import {
   useNavigation,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+
+import Modal from '../UI/Modal';
+import logoImg from '../assets/logo-circle.png';
+import { signUp } from '../services/apiAuth';
+import AuthForm from '../components/auth-form/AuthForm';
+import { loginActions } from '../store/auth-slice';
 import TextValidationMessage from '../UI/TextValidationMessage';
 
-export default function Register() {
+export default function RegisterPage() {
   const data = useActionData();
   const navigate = useNavigate();
   const navigation = useNavigation();
