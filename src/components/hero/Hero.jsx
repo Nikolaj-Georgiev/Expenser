@@ -12,7 +12,7 @@ export default function Hero() {
       opacity: 1,
       transition: {
         when: 'beforeChildren',
-        staggerChildren: 0.3,
+        staggerChildren: 0.2,
       },
     },
     hidden: {
@@ -41,13 +41,13 @@ export default function Hero() {
         className={classes['section-hero']}
         id='hero'
       >
-        <div className={classes.hero}>
-          <motion.div
-            initial='hidden'
-            whileInView='visible'
-            variants={list}
-            className={classes['hero-text-box']}
-          >
+        <motion.div
+          className={classes.hero}
+          initial='hidden'
+          whileInView='visible'
+          variants={list}
+        >
+          <div className={classes['hero-text-box']}>
             <div>
               <motion.h1
                 className={classes['heading-primary']}
@@ -79,7 +79,7 @@ export default function Hero() {
                 ))}
               </ul>
             </div>
-          </motion.div>
+          </div>
           <motion.div
             className={classes['hero-img-box']}
             variants={elements}
@@ -90,7 +90,7 @@ export default function Hero() {
               className={classes['hero-img']}
             />
           </motion.div>
-        </div>
+        </motion.div>
       </section>
     </>
   );
