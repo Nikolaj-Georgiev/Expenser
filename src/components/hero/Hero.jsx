@@ -23,6 +23,18 @@ export default function Hero() {
     },
   };
 
+  const elements = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring' },
+    },
+    hidden: {
+      opacity: 0,
+      y: -300,
+    },
+  };
+
   return (
     <>
       <section
@@ -30,24 +42,27 @@ export default function Hero() {
         id='hero'
       >
         <div className={classes.hero}>
-          <div className={classes['hero-text-box']}>
+          <motion.div
+            initial='hidden'
+            whileInView='visible'
+            variants={list}
+            className={classes['hero-text-box']}
+          >
             <div>
-              <h1 className={classes['heading-primary']}>
+              <motion.h1
+                className={classes['heading-primary']}
+                variants={elements}
+              >
                 {/* Money Matters: A Web App for Family Expense Management and
                 Savings Goals */}
                 Money Matters: A Web App for Family Expense Management
-              </h1>
+              </motion.h1>
             </div>
             <div>
-              <motion.ul
-                initial='hidden'
-                animate='visible'
-                variants={list}
-                className={classes['hero-features-list']}
-              >
+              <ul className={classes['hero-features-list']}>
                 {HERO_BULLETS.map((bullet) => (
                   <motion.li
-                    variants={list}
+                    variants={elements}
                     whileHover={{ scale: 1.1 }}
                     key={bullet.id}
                     className={classes['hero-feature-item']}
@@ -62,30 +77,39 @@ export default function Hero() {
                     </p>
                   </motion.li>
                 ))}
-              </motion.ul>
+              </ul>
             </div>
-          </div>
-
-          <div className={classes['hero-img-box']}>
-            {/* <picture>
-              <source
-                srcSet={smallPigImage}
-                type='image/png'
-              />
-              <source
-                srcSet={bigPigImage}
-                type='image/png'
-              /> */}
-
+          </motion.div>
+          <motion.div
+            className={classes['hero-img-box']}
+            variants={elements}
+          >
             <img
               src={smallPigImage}
               alt='Gold coin entering a piggy bank'
               className={classes['hero-img']}
             />
-            {/* </picture> */}
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
   );
+}
+
+{
+  /* <picture>
+      <source
+        srcSet={smallPigImage}
+        type='image/png'
+      />
+      <source
+        srcSet={bigPigImage}
+        type='image/png'
+      /> 
+      <img
+      src={smallPigImage}
+      alt='Gold coin entering a piggy bank'
+      className={classes['hero-img']}
+    />
+  </picture>*/
 }
