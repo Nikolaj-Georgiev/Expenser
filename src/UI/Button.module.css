@@ -7,6 +7,7 @@
   font-weight: 500;
   border: none;
   background-color: inherit;
+  cursor: pointer;
 }
 
 .button.cta {
@@ -31,5 +32,13 @@
 .button.text:hover {
   color: #f8d221;
   border: 2px solid #c6a406;
-  cursor: pointer;
+}
+
+.button.table {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.button.table:hover {
+  color: #f7cd08;
 }

@@ -35,23 +35,33 @@ export default function TableView({ data }) {
         </thead>
         <tfoot>
           <tr>
-            <td colSpan='6'>Total expenses</td>
+            <td
+              className={classes.footerText}
+              colSpan='4'
+            >
+              Total expenses
+            </td>
             <td>{total}</td>
           </tr>
         </tfoot>
         <tbody>
           {EXPENSES_MOCK.map((row, index) => (
             <tr key={index}>
-              <td>{row.expenseType.image}</td>
-              <td>{row.expenseType.name}</td>
-              <td>{row.description}</td>
-              <td>{row.actionDate}</td>
-              <td>{row.expensePrice}</td>
-              <td>
-                <Button>edit</Button>
+              <td className={classes.colCell}>
+                <img
+                  className={classes.tableImage}
+                  src={row.expenseType.image}
+                />
               </td>
-              <td>
-                <Button>delete</Button>
+              <td className={classes.colCell}>{row.expenseType.name}</td>
+              <td className={classes.descriptionTd}>{row.description}</td>
+              <td className={classes.colCell}>{row.actionDate}</td>
+              <td className={classes.numberCell}>{row.expensePrice}</td>
+              <td className={classes.colCell}>
+                <Button isTable={true}>edit</Button>
+              </td>
+              <td className={classes.colCell}>
+                <Button isTable={true}>delete</Button>
               </td>
             </tr>
           ))}

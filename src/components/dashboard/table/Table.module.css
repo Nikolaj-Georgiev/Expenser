@@ -2,15 +2,17 @@
   width: 100%;
   padding: 4.8rem;
   font-size: large;
-  font-weight: 400;
+  font-weight: 500;
+  color: #333;
   margin: 0 auto;
-  background-color: #a1e2bf;
+  /* background-color: #a1e2bf; */
   border-color: #888;
 }
 
 td,
 th {
   padding: 0.5rem;
+  text-align: center;
 }
 
 /* caption {
@@ -28,4 +30,45 @@ th {
 
 .tableWrap {
   width: 100%;
+}
+
+.tableImage {
+  width: 9.6rem;
+  height: 9.6rem;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  background-color: #f7cd08;
+  /* border-bottom: 1px solid #888; */
+}
+.imageCell {
+  padding: 0;
+  margin: 0;
+  /* column-rule-style: hidden; */
+  /* column-rule-style: outset; */
+}
+
+.colCell {
+  width: 9.6rem;
+  height: 9.6rem;
+}
+
+.descriptionTd {
+  width: 48rem;
+  height: 9.6rem;
+  text-align: left;
+}
+
+.numberCell {
+  width: 9.6rem;
+  height: 9.6rem;
+  text-align: right;
+  /* background-image: linear-gradient(to right, #d9f3e5, #d9f3e5, #a1e2bf); */
+}
+
+tfoot tr td {
+  text-align: right;
+}
+
+tbody tr:hover {
+  background-color: #42c47e;
 }

@@ -86,7 +86,7 @@ export default function MainNav() {
       )}
       {token && (
         <ul className={classes['main-nav-list']}>
-          <motion.li
+          {/* <motion.li
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.85 }}
           >
@@ -96,7 +96,7 @@ export default function MainNav() {
             >
               Dashboard
             </Link>
-          </motion.li>
+          </motion.li> */}
           <motion.li
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.85 }}

@@ -20,6 +20,9 @@ import imageChart1 from '../assets/customers/chart1.webp'
 import imageChart2 from '../assets/customers/chart2.webp'
 
 
+
+
+
 import { redirect } from 'react-router-dom';
 
 export const CARDS_INFO = [
@@ -162,12 +165,12 @@ export const EXPENSES_MOCK = [
     id: '1',
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
-    expensePrice: 50,
-    description: 'babaluga',
+    expensePrice: 50.35,
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
       name: 'medical',
-      image: 'http://laksdlaksdladj',
+      image: medicalPic,
     },
   },
   {
@@ -178,8 +181,8 @@ export const EXPENSES_MOCK = [
     description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
-      name: 'car',
-      image: 'http://laksdlaksdladj',
+      name: 'school',
+      image: schoolPic,
     },
   },
   {
@@ -187,11 +190,11 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 10,
-    description: 'babaluga',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
       name: 'car',
-      image: 'http://laksdlaksdladj',
+      image: carPic,
     },
   },
   {
@@ -199,11 +202,11 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 100,
-    description: 'babaluga',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
       name: 'groceries',
-      image: 'http://laksdlaksdladj',
+      image: groceriesPic,
     },
   },
   {
@@ -211,11 +214,11 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 100,
-    description: 'babaluga',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
       name: 'groceries',
-      image: 'http://laksdlaksdladj',
+      image: groceriesPic,
     },
   },
   {
@@ -223,11 +226,11 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 100,
-    description: 'babaluga',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
       name: 'groceries',
-      image: 'http://laksdlaksdladj',
+      image: groceriesPic,
     },
   },
   {
@@ -235,11 +238,11 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 100,
-    description: 'babaluga',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
-      name: 'groceries',
-      image: 'http://laksdlaksdladj',
+      name: 'medical',
+      image: medicalPic,
     },
   },
   {
@@ -247,11 +250,11 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 100,
-    description: 'babaluga',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
-      name: 'groceries',
-      image: 'http://laksdlaksdladj',
+      name: 'school',
+      image: schoolPic,
     },
   },
   {
@@ -259,11 +262,11 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 100,
-    description: 'babaluga',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
-      name: 'groceries',
-      image: 'http://laksdlaksdladj',
+      name: 'car',
+      image: carPic,
     },
   },
   {
@@ -271,11 +274,11 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 100,
-    description: 'babaluga',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
       name: 'groceries',
-      image: 'http://laksdlaksdladj',
+      image: groceriesPic,
     },
   },
   {
@@ -283,11 +286,16 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 100,
-    description: 'babaluga',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
     userID: 'sdkb',
     expenseType: {
       name: 'groceries',
-      image: 'http://laksdlaksdladj',
+      image: groceriesPic,
     },
   },
 ];
+
+import carPic from '../assets/expenses-images/car.png'
+import groceriesPic from '../assets/expenses-images/groseries-edited.png'
+import medicalPic from '../assets/expenses-images/medical.png'
+import schoolPic from '../assets/expenses-images/school.png'
