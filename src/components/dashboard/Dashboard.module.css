@@ -1,17 +1,33 @@
 .dashboard {
-  max-height: calc(100vh - 9.6rem - 99.6rem);
+  /* max-height: 80vh; */
+  max-height: calc(100vh - 9.6rem - 9.6rem);
+  padding: 4.8rem 6.4rem 3.2rem 6.4rem;
+  background-color: #d9f3e5;
 }
 
-.heading {
+/* .heading {
   font-family: inherit;
   font-size: 4.8rem;
   font-weight: 600;
   margin: 4.8rem 50rem;
-}
+} */
 
 .list {
-  padding: 27rem;
+  padding: 4.8rem;
   font-family: inherit;
   font-size: large;
   font-weight: 500;
+}
+
+.box {
+  margin: 0 auto;
+  max-width: 120rem;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  /* padding: 4.8rem 0; */
+  padding-bottom: 4.8rem;
+  justify-content: center;
+  align-items: center;
+  gap: 6.4rem;
 }

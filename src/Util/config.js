@@ -20,6 +20,9 @@ import imageChart1 from '../assets/customers/chart1.webp'
 import imageChart2 from '../assets/customers/chart2.webp'
 
 
+
+
+
 import { redirect } from 'react-router-dom';
 
 export const CARDS_INFO = [
@@ -156,3 +159,171 @@ export const CUSTOMERS = [
 ]
 
 export const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFib2J0cWx0cmZoZXhsaHdiamlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU0MjE1NDAsImV4cCI6MjAyMDk5NzU0MH0.n6Ha3kWvSfOGQrsWJoMFodmL-vGCmmsoiEtto7ueCPg';
+
+export const EXPENSES_MOCK = [
+  {
+    id: '1',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 50.35,
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'medical',
+      image: medicalPic,
+    },
+  },
+  {
+    id: '2',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 10,
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'school',
+      image: schoolPic,
+    },
+  },
+  {
+    id: '3',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 10,
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'car',
+      image: carPic,
+    },
+  },
+  {
+    id: '4',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 100,
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'groceries',
+      image: groceriesPic,
+    },
+  },
+  {
+    id: '5',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 100,
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'groceries',
+      image: groceriesPic,
+    },
+  },
+  // {
+  //   id: '6',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'groceries',
+  //     image: groceriesPic,
+  //   },
+  // },
+  // {
+  //   id: '7',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'medical',
+  //     image: medicalPic,
+  //   },
+  // },
+  // {
+  //   id: '8',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'school',
+  //     image: schoolPic,
+  //   },
+  // },
+  // {
+  //   id: '9',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'car',
+  //     image: carPic,
+  //   },
+  // },
+  // {
+  //   id: '10',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'groceries',
+  //     image: groceriesPic,
+  //   },
+  // },
+  // {
+  //   id: '11',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'groceries',
+  //     image: groceriesPic,
+  //   },
+  // },
+];
+
+export const CATEGORIES = [
+  {
+    id: '1',
+    created_at: '..',
+    name: 'groceries ',
+    image: groceriesPic,
+  },
+  {
+    id: '2',
+    created_at: '..',
+    name: 'car ',
+    image: carPic,
+  },
+  {
+    id: '3',
+    created_at: '..',
+    name: 'medical ',
+    image: medicalPic,
+  },
+  {
+    id: '4',
+    created_at: '..',
+    name: 'school ',
+    image: schoolPic,
+  },
+
+]
+
+import carPic from '../assets/expenses-images/car.png'
+import groceriesPic from '../assets/expenses-images/groceries-edited.png'
+import medicalPic from '../assets/expenses-images/medical.png'
+import schoolPic from '../assets/expenses-images/school.png'
