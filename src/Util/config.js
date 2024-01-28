@@ -295,7 +295,7 @@ export const EXPENSES_MOCK = [
   // },
 ];
 
-const CATEGORIES = [
+export const CATEGORIES = [
   {
     id: '1',
     created_at: '..',
