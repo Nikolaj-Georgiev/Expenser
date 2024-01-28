@@ -47,11 +47,13 @@ export default function TableView({ data }) {
         <tbody>
           {EXPENSES_MOCK.map((row, index) => (
             <tr key={index}>
-              <td className={classes.colCell}>
-                <img
-                  className={classes.tableImage}
-                  src={row.expenseType.image}
-                />
+              <td className={classes.imageCell}>
+                <div className={classes.imageDiv}>
+                  <img
+                    className={classes.tableImage}
+                    src={row.expenseType.image}
+                  />
+                </div>
               </td>
               <td className={classes.colCell}>{row.expenseType.name}</td>
               <td className={classes.descriptionTd}>{row.description}</td>

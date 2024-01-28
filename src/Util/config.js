@@ -166,7 +166,7 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 50.35,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
     userID: 'sdkb',
     expenseType: {
       name: 'medical',
@@ -178,7 +178,7 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 10,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
     userID: 'sdkb',
     expenseType: {
       name: 'school',
@@ -190,7 +190,7 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 10,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
     userID: 'sdkb',
     expenseType: {
       name: 'car',
@@ -202,7 +202,7 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 100,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
     userID: 'sdkb',
     expenseType: {
       name: 'groceries',
@@ -214,88 +214,116 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 100,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
     userID: 'sdkb',
     expenseType: {
       name: 'groceries',
       image: groceriesPic,
     },
   },
-  {
-    id: '6',
-    createdAt: '2024-01-24 13:26:56.028086+00',
-    actionDate: '25/01/2024',
-    expensePrice: 100,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
-    userID: 'sdkb',
-    expenseType: {
-      name: 'groceries',
-      image: groceriesPic,
-    },
-  },
-  {
-    id: '7',
-    createdAt: '2024-01-24 13:26:56.028086+00',
-    actionDate: '25/01/2024',
-    expensePrice: 100,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
-    userID: 'sdkb',
-    expenseType: {
-      name: 'medical',
-      image: medicalPic,
-    },
-  },
-  {
-    id: '8',
-    createdAt: '2024-01-24 13:26:56.028086+00',
-    actionDate: '25/01/2024',
-    expensePrice: 100,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
-    userID: 'sdkb',
-    expenseType: {
-      name: 'school',
-      image: schoolPic,
-    },
-  },
-  {
-    id: '9',
-    createdAt: '2024-01-24 13:26:56.028086+00',
-    actionDate: '25/01/2024',
-    expensePrice: 100,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
-    userID: 'sdkb',
-    expenseType: {
-      name: 'car',
-      image: carPic,
-    },
-  },
-  {
-    id: '10',
-    createdAt: '2024-01-24 13:26:56.028086+00',
-    actionDate: '25/01/2024',
-    expensePrice: 100,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
-    userID: 'sdkb',
-    expenseType: {
-      name: 'groceries',
-      image: groceriesPic,
-    },
-  },
-  {
-    id: '11',
-    createdAt: '2024-01-24 13:26:56.028086+00',
-    actionDate: '25/01/2024',
-    expensePrice: 100,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
-    userID: 'sdkb',
-    expenseType: {
-      name: 'groceries',
-      image: groceriesPic,
-    },
-  },
+  // {
+  //   id: '6',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'groceries',
+  //     image: groceriesPic,
+  //   },
+  // },
+  // {
+  //   id: '7',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'medical',
+  //     image: medicalPic,
+  //   },
+  // },
+  // {
+  //   id: '8',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'school',
+  //     image: schoolPic,
+  //   },
+  // },
+  // {
+  //   id: '9',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'car',
+  //     image: carPic,
+  //   },
+  // },
+  // {
+  //   id: '10',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'groceries',
+  //     image: groceriesPic,
+  //   },
+  // },
+  // {
+  //   id: '11',
+  //   createdAt: '2024-01-24 13:26:56.028086+00',
+  //   actionDate: '25/01/2024',
+  //   expensePrice: 100,
+  //   description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+  //   userID: 'sdkb',
+  //   expenseType: {
+  //     name: 'groceries',
+  //     image: groceriesPic,
+  //   },
+  // },
 ];
 
+const CATEGORIES = [
+  {
+    id: '1',
+    created_at: '..',
+    name: 'groceries ',
+    image: groceriesPic,
+  },
+  {
+    id: '2',
+    created_at: '..',
+    name: 'car ',
+    image: carPic,
+  },
+  {
+    id: '3',
+    created_at: '..',
+    name: 'medical ',
+    image: medicalPic,
+  },
+  {
+    id: '4',
+    created_at: '..',
+    name: 'school ',
+    image: schoolPic,
+  },
+
+]
+
 import carPic from '../assets/expenses-images/car.png'
-import groceriesPic from '../assets/expenses-images/groseries-edited.png'
+import groceriesPic from '../assets/expenses-images/groceries-edited.png'
 import medicalPic from '../assets/expenses-images/medical.png'
 import schoolPic from '../assets/expenses-images/school.png'

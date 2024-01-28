@@ -25,7 +25,8 @@
   max-height: 100%;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  padding: 4.8rem 0;
+  /* padding: 4.8rem 0; */
+  padding-bottom: 4.8rem;
   justify-content: center;
   align-items: center;
   gap: 2.4rem;
