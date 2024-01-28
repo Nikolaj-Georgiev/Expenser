@@ -1,5 +1,8 @@
 .dashboard {
-  max-height: calc(100vh - 9.6rem - 99.6rem);
+  max-height: 80vh;
+  /* max-height: calc(100vh - 9.6rem - 9.6rem); */
+  padding: 6.4rem 6.4rem;
+  background-color: #d9f3e5;
 }
 
 .heading {
@@ -10,8 +13,20 @@
 }
 
 .list {
-  padding: 27rem;
+  padding: 4.8rem;
   font-family: inherit;
   font-size: large;
   font-weight: 500;
+}
+
+.box {
+  margin: 0 auto;
+  max-width: 120rem;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding: 4.8rem 0;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
 }

@@ -156,3 +156,138 @@ export const CUSTOMERS = [
 ]
 
 export const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFib2J0cWx0cmZoZXhsaHdiamlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU0MjE1NDAsImV4cCI6MjAyMDk5NzU0MH0.n6Ha3kWvSfOGQrsWJoMFodmL-vGCmmsoiEtto7ueCPg';
+
+export const EXPENSES_MOCK = [
+  {
+    id: '1',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 50,
+    description: 'babaluga',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'medical',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+  {
+    id: '2',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 10,
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus suscipit repellendus modi numquam autem nisi reiciendis libero repudiandae recusandae vel!',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'car',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+  {
+    id: '3',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 10,
+    description: 'babaluga',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'car',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+  {
+    id: '4',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 100,
+    description: 'babaluga',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'groceries',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+  {
+    id: '5',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 100,
+    description: 'babaluga',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'groceries',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+  {
+    id: '6',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 100,
+    description: 'babaluga',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'groceries',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+  {
+    id: '7',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 100,
+    description: 'babaluga',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'groceries',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+  {
+    id: '8',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 100,
+    description: 'babaluga',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'groceries',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+  {
+    id: '9',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 100,
+    description: 'babaluga',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'groceries',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+  {
+    id: '10',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 100,
+    description: 'babaluga',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'groceries',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+  {
+    id: '11',
+    createdAt: '2024-01-24 13:26:56.028086+00',
+    actionDate: '25/01/2024',
+    expensePrice: 100,
+    description: 'babaluga',
+    userID: 'sdkb',
+    expenseType: {
+      name: 'groceries',
+      image: 'http://laksdlaksdladj',
+    },
+  },
+];
