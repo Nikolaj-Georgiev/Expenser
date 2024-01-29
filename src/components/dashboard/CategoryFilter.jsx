@@ -53,6 +53,7 @@ export function CategoryFilter({ setCurrentCategory }) {
 
         <ul className={classes.list}>
           <motion.li
+            key='All expenses'
             variants={items}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -62,7 +63,7 @@ export function CategoryFilter({ setCurrentCategory }) {
               className={classes.categoryButtonAll}
               onClick={() => setCurrentCategory('all')}
             >
-              All
+              All expenses
             </button>
           </motion.li>
           {CATEGORIES.map((cat) => (
@@ -81,10 +82,24 @@ export function CategoryFilter({ setCurrentCategory }) {
                 className={classes.categoryButton}
                 onClick={() => setCurrentCategory(cat.name)}
               >
-                {cat.name}
+                {cat.name.toUpperCase()}
               </button>
             </motion.li>
           ))}
+          <motion.li
+            key='to savings'
+            variants={items}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className={`${classes.listItem} ${classes.switchTo}`}
+          >
+            <button
+              className={classes.categoryButtonAll}
+              onClick={() => setCurrentCategory('all')}
+            >
+              Savings
+            </button>
+          </motion.li>
         </ul>
       </motion.div>
     </aside>

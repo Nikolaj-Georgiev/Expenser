@@ -103,6 +103,8 @@ body {
 /* Other browsers - Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 0.6rem;
+  background-color: #42c47e;
+  color: #42c47e;
 }
 
 *::-webkit-scrollbar-track {
