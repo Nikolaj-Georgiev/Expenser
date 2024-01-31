@@ -1,7 +1,10 @@
-import { CATEGORIES } from '../../util/config';
 import { motion } from 'framer-motion';
 import classes from './CategoryFilter.module.css';
 import expensesImg from '../../assets/expenses-images/expenses.webp';
+import savingsImg from '../../assets/savings-images/saving.webp';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { dashboardActions } from '../../store/dashboard-slice';
 
 const list = {
   visible: {
@@ -37,23 +40,35 @@ const items = {
 };
 
 export function CategoryFilter({ setCurrentCategory }) {
+  const dispatch = useDispatch();
+  function handleChangeCatType(type) {
+    dispatch(dashboardActions.toggleCatTypes(type));
+    dispatch(dashboardActions.getCatTypesData(type));
+  }
+  const catType = useSelector((state) => state.dashboard.catTypes);
+  console.log(catType);
+
+  const currentData = useSelector((state) => state.dashboard.catTypesData);
+  console.log(currentData);
+
   return (
     <aside className={classes.aside}>
       <motion.div
         initial='hidden'
         whileInView='visible'
+        animate='visible'
         variants={list}
         className={classes.box}
       >
         <motion.img
           variants={items}
           className={classes.img}
-          src={expensesImg}
+          src={catType === 'expenses' ? expensesImg : savingsImg}
         />
 
         <ul className={classes.list}>
           <motion.li
-            key='All expenses'
+            key='All'
             variants={items}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -61,12 +76,12 @@ export function CategoryFilter({ setCurrentCategory }) {
           >
             <button
               className={classes.categoryButtonAll}
-              onClick={() => setCurrentCategory('all')}
+              // onClick={() => setCurrentCategory('all')}
             >
-              All expenses
+              {`All ${catType}`}
             </button>
           </motion.li>
-          {CATEGORIES.map((cat) => (
+          {currentData.map((cat) => (
             <motion.li
               variants={items}
               whileHover={{ scale: 1.1 }}
@@ -80,7 +95,7 @@ export function CategoryFilter({ setCurrentCategory }) {
               />
               <button
                 className={classes.categoryButton}
-                onClick={() => setCurrentCategory(cat.name)}
+                // onClick={() => setCurrentCategory(cat.name)}
               >
                 {cat.name.toUpperCase()}
               </button>
@@ -95,9 +110,13 @@ export function CategoryFilter({ setCurrentCategory }) {
           >
             <button
               className={classes.categoryButtonAll}
-              onClick={() => setCurrentCategory('all')}
+              onClick={() =>
+                handleChangeCatType(
+                  catType === 'expenses' ? 'savings' : 'expenses'
+                )
+              }
             >
-              Savings
+              {`${catType.slice(0, 1).toUpperCase()}${catType.slice(1)}`}
             </button>
           </motion.li>
         </ul>
