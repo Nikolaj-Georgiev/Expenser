@@ -27,6 +27,9 @@ caption {
 
 .tableWrap {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 .imageDiv {
   width: 100%;
@@ -76,3 +79,64 @@ tfoot tr td {
 tbody tr:hover {
   background-color: #42c47e;
 }
+
+.pagination {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 0;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.pagination li {
+  display: inline;
+  text-align: center;
+}
+
+.pagination button {
+  align-self: center;
+  margin: 0 0.5rem;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  border: none;
+  background-color: #f7cd08;
+  color: #1a4e32;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.pagination button.prev {
+  -moz-border-radius: 5rem 0 0 5rem;
+  -webkit-border-radius: 5rem;
+  border-radius: 5rem 0 0 5rem;
+  width: 5rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  font-size: 2.4rem;
+  color: #1a4e32;
+  font-weight: 500;
+}
+.pagination button.next {
+  -moz-border-radius: 0 5rem 5rem 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 5rem 5rem 0;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+
+  width: 5rem;
+}
+.pagination button:hover {
+  background-color: #c6a406;
+}
+.pagination button.active {
+  background-color: #c6a406;
+}
+/* .modal-4 button:active {
+  background-color: #ffa100;
+} */

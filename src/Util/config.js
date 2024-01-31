@@ -238,7 +238,7 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 10,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+    description: 'Hujnja',
     userID: 'sdkb',
     expenseType: {
       name: 'school',
@@ -310,7 +310,7 @@ export const EXPENSES_MOCK = [
     createdAt: '2024-01-24 13:26:56.028086+00',
     actionDate: '25/01/2024',
     expensePrice: 10,
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. ',
+    description: 'Raboti!',
     userID: 'sdkb',
     expenseType: {
       name: 'car',
