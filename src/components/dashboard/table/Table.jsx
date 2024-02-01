@@ -71,7 +71,11 @@ export default function TableView({ data }) {
           </tfoot>
           <tbody>
             {currentItems.map((row, index) => (
-              <tr key={index}>
+              <motion.tr
+                key={index}
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
+              >
                 <td className={classes.imageCell}>
                   <div className={classes.imageDiv}>
                     <img
@@ -92,7 +96,7 @@ export default function TableView({ data }) {
                 <td className={classes.colCell}>
                   <Button isTable={true}>delete</Button>
                 </td>
-              </tr>
+              </motion.tr>
             ))}
           </tbody>
         </table>
