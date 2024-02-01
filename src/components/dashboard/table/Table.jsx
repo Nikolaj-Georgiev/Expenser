@@ -1,44 +1,32 @@
 /* eslint-disable react/prop-types */
-// import { useMemo } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { paginationActions } from '../../../store/pagination-slice';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useMemo } from 'react';
+import { motion } from 'framer-motion';
 
-import { EXPENSES_MOCK, SAVINGS_MOCK } from '../../../util/config';
+import { usePagination } from '../../../hooks/usePagination';
 import classes from './Table.module.css';
 import Button from '../../../UI/Button';
 
-export default function TableView({ data }) {
+export default function TableView({ data, catType }) {
   const columns = ['What', 'Description', 'When', 'How much'];
 
-  const catType = useSelector((state) => state.dashboard.catTypes);
+  const {
+    currentPage,
+    indexOfFirstItem,
+    indexOfLastItem,
+    totalPages,
+    paginate,
+  } = usePagination(data);
 
-  const dispatch = useDispatch();
-  const currentPage = useSelector((state) => state.pagination.currentPage);
-  const itemsPerPage = useSelector((state) => state.pagination.itemsPerPage);
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const total = useMemo(
+    () => data.reduce((sum, row) => sum + row.expensePrice, 0).toFixed(2),
+    [data]
+  );
 
-  // const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
-  const currentData = catType === 'savings' ? SAVINGS_MOCK : EXPENSES_MOCK; // mock data to check the logic and the styling
-  const currentItems = currentData.slice(indexOfFirstItem, indexOfLastItem);
-
-  const paginate = (pageNumber) => {
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-      dispatch(paginationActions.setCurrentPage(pageNumber));
-    }
-  };
-
-  const total = currentData
-    .reduce((sum, row) => sum + row.expensePrice, 0)
-    .toFixed(2);
-
-  if (!currentData || currentData.length === 0) {
+  if (!data || data.length === 0) {
     return <p>Няма данни в таз хуйня</p>;
   }
-
-  const totalPages = Math.ceil(currentData.length / itemsPerPage);
 
   return (
     <>
@@ -74,7 +62,11 @@ export default function TableView({ data }) {
               <motion.tr
                 key={index}
                 initial={{ opacity: 0, y: -100 }}
-                animate={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.4, delay: 0.1 },
+                }}
               >
                 <td className={classes.imageCell}>
                   <div className={classes.imageDiv}>
@@ -134,12 +126,3 @@ export default function TableView({ data }) {
     </>
   );
 }
-
-// const total = useMemo(
-//   () => data.reduce((sum, row) => sum + row.expensePrice, 0),
-//   [data]
-// );
-// const total = useMemo(
-//   () => EXPENSES_MOCK.reduce((sum, row) => sum + row.expensePrice, 0),
-//   []
-// );
