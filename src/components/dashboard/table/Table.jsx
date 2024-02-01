@@ -103,7 +103,8 @@ export default function TableView({ data }) {
               onClick={() => paginate(currentPage - 1)}
               disabled={currentPage === 1}
             >
-              &#129192;
+              {/* &#129192; */}
+              {/* ☚ */}⯇
             </Button>
           </li>
           {[...Array(totalPages).keys()].map((number) => (
@@ -120,7 +121,8 @@ export default function TableView({ data }) {
               onClick={() => paginate(currentPage + 1)}
               disabled={currentPage === totalPages}
             >
-              &#129193;
+              {/* &#129193; */}
+              {/* ☛ */}⯈
             </Button>
           </li>
         </ul>

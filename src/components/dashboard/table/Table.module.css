@@ -110,6 +110,7 @@ tbody tr:hover {
   color: #1a4e32;
   font-size: 1.8rem;
   font-weight: 500;
+  cursor: pointer;
 }
 .pagination button.prev {
   -moz-border-radius: 5rem 0 0 5rem;
@@ -118,7 +119,7 @@ tbody tr:hover {
   width: 5rem;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   color: #1a4e32;
   font-weight: 500;
 }
@@ -128,7 +129,9 @@ tbody tr:hover {
   border-radius: 0 5rem 5rem 0;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
-
+  font-size: 2.8rem;
+  color: #1a4e32;
+  font-weight: 500;
   width: 5rem;
 }
 .pagination button:hover {
