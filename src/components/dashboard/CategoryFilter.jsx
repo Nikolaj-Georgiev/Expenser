@@ -8,7 +8,7 @@ import { dashboardActions } from '../../store/dashboard-slice';
 
 const categoryVariants = {
   initial: {
-    y: 0,
+    y: 50,
     opacity: 0,
     transition: {
       when: 'afterChildren',
@@ -20,6 +20,14 @@ const categoryVariants = {
     transition: {
       when: 'beforeChildren',
       staggerChildren: 0.15,
+    },
+  },
+  exit: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      staggerChildren: 0.15,
+      when: 'afterChildren',
     },
   },
 };
@@ -36,70 +44,73 @@ export function CategoryFilter({ setCurrentCategory }) {
   console.log(currentData);
   return (
     <aside className={classes.aside}>
-      <motion.div
-        initial='initial'
-        animate='animate'
-        variants={categoryVariants}
-        className={classes.box}
-        layout
-      >
-        <img
-          className={classes.img}
-          src={catType === 'expenses' ? expensesImg : savingsImg}
-        />
-        <ul className={classes.list}>
-          <motion.li
-            key={`All ${catType}`}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className={classes.listItem}
-          >
-            <button
-              className={classes.categoryButtonAll}
-              // onClick={() => setCurrentCategory('all')}
-            >
-              {`All ${catType}`}
-            </button>
-          </motion.li>
-          {currentData.map((cat) => (
+      <AnimatePresence mode='wait'>
+        <motion.div
+          initial='initial'
+          animate='animate'
+          variants={categoryVariants}
+          className={classes.box}
+          layout
+        >
+          <img
+            className={classes.img}
+            src={catType === 'expenses' ? expensesImg : savingsImg}
+          />
+          <ul className={classes.list}>
             <motion.li
-              variants={categoryVariants}
+              key={`All ${catType}`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              key={cat.name}
               className={classes.listItem}
             >
-              <img
-                className={classes.catImage}
-                src={cat.image}
-              />
               <button
-                className={classes.categoryButton}
-                // onClick={() => setCurrentCategory(cat.name)}
+                className={classes.categoryButtonAll}
+                // onClick={() => setCurrentCategory('all')}
               >
-                {cat.name.toUpperCase()}
+                {`All ${catType}`}
               </button>
             </motion.li>
-          ))}
-          <motion.li
-            key={`to ${catType}`}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className={`${classes.listItem} ${classes.switchTo}`}
-          >
-            <button
-              className={classes.categoryButtonAll}
-              onClick={() =>
-                handleChangeCatType(
-                  catType === 'expenses' ? 'savings' : 'expenses'
-                )
-              }
+            {currentData.map((cat) => (
+              <motion.li
+                variants={categoryVariants}
+                exit={{ y: 20, opacity: 0, transition: { duration: 0.1 } }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                key={cat.name}
+                className={classes.listItem}
+              >
+                <img
+                  className={classes.catImage}
+                  src={cat.image}
+                />
+                <button
+                  className={classes.categoryButton}
+                  // onClick={() => setCurrentCategory(cat.name)}
+                >
+                  {cat.name.toUpperCase()}
+                </button>
+              </motion.li>
+            ))}
+            <motion.li
+              key={`to ${catType}`}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className={`${classes.listItem} ${classes.switchTo}`}
             >
-              {`${catType.slice(0, 1).toUpperCase()}${catType.slice(1)}`}
-            </button>
-          </motion.li>
-        </ul>
-      </motion.div>
+              <button
+                className={classes.categoryButtonAll}
+                onClick={() =>
+                  handleChangeCatType(
+                    catType === 'expenses' ? 'savings' : 'expenses'
+                  )
+                }
+              >
+                {`${catType.slice(0, 1).toUpperCase()}${catType.slice(1)}`}
+              </button>
+            </motion.li>
+          </ul>
+        </motion.div>
+      </AnimatePresence>
     </aside>
   );
 }
