@@ -1,40 +1,25 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useDispatch, useSelector } from 'react-redux';
+
 import classes from './CategoryFilter.module.css';
 import expensesImg from '../../assets/expenses-images/expenses.webp';
 import savingsImg from '../../assets/savings-images/saving.webp';
-
-import { useDispatch, useSelector } from 'react-redux';
 import { dashboardActions } from '../../store/dashboard-slice';
 
-const list = {
-  visible: {
-    opacity: 1,
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.2,
-    },
-  },
-  hidden: {
+const categoryVariants = {
+  initial: {
+    y: 0,
     opacity: 0,
     transition: {
       when: 'afterChildren',
     },
   },
-};
-
-const items = {
-  visible: {
+  animate: {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  hidden: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
+      when: 'beforeChildren',
+      staggerChildren: 0.15,
     },
   },
 };
@@ -47,29 +32,24 @@ export function CategoryFilter({ setCurrentCategory }) {
   }
   const catType = useSelector((state) => state.dashboard.catTypes);
   console.log(catType);
-
   const currentData = useSelector((state) => state.dashboard.catTypesData);
   console.log(currentData);
-
   return (
     <aside className={classes.aside}>
       <motion.div
-        initial='hidden'
-        whileInView='visible'
-        animate='visible'
-        variants={list}
+        initial='initial'
+        animate='animate'
+        variants={categoryVariants}
         className={classes.box}
+        layout
       >
-        <motion.img
-          variants={items}
+        <img
           className={classes.img}
           src={catType === 'expenses' ? expensesImg : savingsImg}
         />
-
         <ul className={classes.list}>
           <motion.li
-            key='All'
-            variants={items}
+            key={`All ${catType}`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className={classes.listItem}
@@ -83,7 +63,7 @@ export function CategoryFilter({ setCurrentCategory }) {
           </motion.li>
           {currentData.map((cat) => (
             <motion.li
-              variants={items}
+              variants={categoryVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               key={cat.name}
@@ -102,8 +82,7 @@ export function CategoryFilter({ setCurrentCategory }) {
             </motion.li>
           ))}
           <motion.li
-            key='to savings'
-            variants={items}
+            key={`to ${catType}`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className={`${classes.listItem} ${classes.switchTo}`}

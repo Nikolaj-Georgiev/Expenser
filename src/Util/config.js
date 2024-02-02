@@ -529,25 +529,31 @@ export const EXPENSES_CATEGORIES = [
   {
     id: '1',
     created_at: '..',
-    name: 'groceries ',
+    name: 'groceries',
     image: groceriesPic,
   },
   {
     id: '2',
     created_at: '..',
-    name: 'car ',
+    name: 'car',
     image: carPic,
   },
   {
     id: '3',
     created_at: '..',
-    name: 'medical ',
+    name: 'medical',
     image: medicalPic,
   },
   {
     id: '4',
     created_at: '..',
-    name: 'school ',
+    name: 'school',
+    image: schoolPic,
+  },
+  {
+    id: '5',
+    created_at: '..',
+    name: 'other',
     image: schoolPic,
   },
 
@@ -557,25 +563,32 @@ export const SAVINGS_CATEGORIES = [
   {
     id: '1',
     created_at: '..',
-    name: 'vacations ',
+    name: 'vacations',
     image: vacationImg,
   },
   {
     id: '2',
     created_at: '..',
-    name: 'car',
-    image: carImg,
+    name: 'kids',
+    image: kidsSavingsImg,
   },
   {
     id: '3',
     created_at: '..',
-    name: 'kids ',
-    image: kidsSavingsImg,
+    name: 'car',
+    image: carImg,
   },
+
   {
     id: '4',
     created_at: '..',
-    name: 'retirement ',
+    name: 'retirement',
+    image: retirementImg,
+  },
+  {
+    id: '5',
+    created_at: '..',
+    name: 'other',
     image: retirementImg,
   },
 

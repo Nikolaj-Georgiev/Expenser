@@ -3,7 +3,7 @@ import { EXPENSES_CATEGORIES, SAVINGS_CATEGORIES } from "../util/config";
 
 const dashboardSlice = createSlice({
   name: 'dashboard',
-  initialState: { catTypes: 'expenses', catTypesData: EXPENSES_CATEGORIES },
+  initialState: { catTypes: 'expenses', catTypesData: EXPENSES_CATEGORIES, curData: [] },
   reducers: {
     toggleCatTypes(state, actions) {
       const newCatType = actions.payload;
@@ -14,6 +14,9 @@ const dashboardSlice = createSlice({
       const dataType = actions.payload;
       // const existingCatTypeData = state.catTypesData;
       dataType === 'expenses' ? state.catTypesData = EXPENSES_CATEGORIES : state.catTypesData = SAVINGS_CATEGORIES;
+    },
+    getCurData(state, actions) {
+
     }
   }
 });
