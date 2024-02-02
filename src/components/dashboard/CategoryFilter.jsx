@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, animate } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 
 import classes from './CategoryFilter.module.css';
@@ -39,9 +39,7 @@ export function CategoryFilter({ setCurrentCategory }) {
     dispatch(dashboardActions.getCatTypesData(type));
   }
   const catType = useSelector((state) => state.dashboard.catTypes);
-  console.log(catType);
   const currentData = useSelector((state) => state.dashboard.catTypesData);
-  console.log(currentData);
   return (
     <aside className={classes.aside}>
       <AnimatePresence mode='wait'>
@@ -56,7 +54,11 @@ export function CategoryFilter({ setCurrentCategory }) {
             className={classes.img}
             src={catType === 'expenses' ? expensesImg : savingsImg}
           />
-          <ul className={classes.list}>
+          <motion.ul
+            className={classes.list}
+            variants={categoryVariants}
+            // animate='animate'
+          >
             <motion.li
               key={`All ${catType}`}
               whileHover={{ scale: 1.1 }}
@@ -70,27 +72,33 @@ export function CategoryFilter({ setCurrentCategory }) {
                 {`All ${catType}`}
               </button>
             </motion.li>
-            {currentData.map((cat) => (
-              <motion.li
-                variants={categoryVariants}
-                exit={{ y: 20, opacity: 0, transition: { duration: 0.1 } }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                key={cat.name}
-                className={classes.listItem}
-              >
-                <img
-                  className={classes.catImage}
-                  src={cat.image}
-                />
-                <button
-                  className={classes.categoryButton}
-                  // onClick={() => setCurrentCategory(cat.name)}
+            <AnimatePresence mode='wait'>
+              {currentData.map((cat) => (
+                <motion.li
+                  variants={categoryVariants}
+                  exit={{
+                    y: 20,
+                    opacity: 0,
+                    transition: { duration: 0.15 },
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  key={cat.created_at}
+                  className={classes.listItem}
                 >
-                  {cat.name.toUpperCase()}
-                </button>
-              </motion.li>
-            ))}
+                  <img
+                    className={classes.catImage}
+                    src={cat.image}
+                  />
+                  <button
+                    className={classes.categoryButton}
+                    // onClick={() => setCurrentCategory(cat.name)}
+                  >
+                    {cat.name.toUpperCase()}
+                  </button>
+                </motion.li>
+              ))}
+            </AnimatePresence>
             <motion.li
               key={`to ${catType}`}
               whileHover={{ scale: 1.1 }}
@@ -108,7 +116,7 @@ export function CategoryFilter({ setCurrentCategory }) {
                 {`${catType.slice(0, 1).toUpperCase()}${catType.slice(1)}`}
               </button>
             </motion.li>
-          </ul>
+          </motion.ul>
         </motion.div>
       </AnimatePresence>
     </aside>

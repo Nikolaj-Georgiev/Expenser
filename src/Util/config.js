@@ -528,31 +528,31 @@ export const SAVINGS_MOCK = [
 export const EXPENSES_CATEGORIES = [
   {
     id: '1',
-    created_at: '..',
+    created_at: '006',
     name: 'groceries',
     image: groceriesPic,
   },
   {
     id: '2',
-    created_at: '..',
+    created_at: '007',
     name: 'car',
     image: carPic,
   },
   {
     id: '3',
-    created_at: '..',
+    created_at: '008',
     name: 'medical',
     image: medicalPic,
   },
   {
     id: '4',
-    created_at: '..',
+    created_at: '009',
     name: 'school',
     image: schoolPic,
   },
   {
     id: '5',
-    created_at: '..',
+    created_at: '010',
     name: 'other',
     image: schoolPic,
   },
@@ -562,32 +562,32 @@ export const EXPENSES_CATEGORIES = [
 export const SAVINGS_CATEGORIES = [
   {
     id: '1',
-    created_at: '..',
+    created_at: '001',
     name: 'vacations',
     image: vacationImg,
   },
   {
     id: '2',
-    created_at: '..',
+    created_at: '002',
     name: 'kids',
     image: kidsSavingsImg,
   },
   {
     id: '3',
-    created_at: '..',
+    created_at: '003',
     name: 'car',
     image: carImg,
   },
 
   {
     id: '4',
-    created_at: '..',
+    created_at: '004',
     name: 'retirement',
     image: retirementImg,
   },
   {
     id: '5',
-    created_at: '..',
+    created_at: '005',
     name: 'other',
     image: retirementImg,
   },
