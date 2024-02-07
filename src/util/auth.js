@@ -51,3 +51,9 @@ export function checkAuthLoader() {
 
   return null;
 }
+
+export function gerAuthUser() {
+  const authUser = JSON.parse(localStorage.getItem('sb-qbobtqltrfhexlhwbjig-auth-token')).user;
+  console.log(authUser.id);
+  return authUser;
+}

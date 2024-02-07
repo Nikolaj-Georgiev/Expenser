@@ -1,10 +1,12 @@
-import { motion, AnimatePresence, animate } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 
 import classes from './CategoryFilter.module.css';
 import expensesImg from '../../assets/expenses-images/expenses.webp';
 import savingsImg from '../../assets/savings-images/saving.webp';
 import { dashboardActions } from '../../store/dashboard-slice';
+import { gerAuthUser } from '../../util/auth';
+import { getSavings, getSavingsTypes } from '../../services/apiDataFetching';
 
 const categoryVariants = {
   initial: {
@@ -91,6 +93,7 @@ export function CategoryFilter({ setCurrentCategory }) {
                     src={cat.image}
                   />
                   <button
+                    onClick={getSavingsTypes}
                     className={classes.categoryButton}
                     // onClick={() => setCurrentCategory(cat.name)}
                   >
