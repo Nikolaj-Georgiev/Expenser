@@ -43,7 +43,7 @@ export default function Footer() {
           >
             <a
               className={classes.link}
-              href='https://github.com/NGNikolay'
+              href='https://github.com/Nikolaj-Georgiev'
               target='_blank'
               rel='noreferrer'
             >
